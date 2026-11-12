@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trường THPT Số 2 Nguyễn Trường Tộ - Hệ Thống Học Tiếng Anh và Cấp Chứng Chỉ</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Thanh Header Truong Hoc -->
+  <header class="school-topbar no-print">
+    <div class="brand-wrap">
+      <img src="logo.png" alt="Logo Trường THPT Số 2 Nguyễn Trường Tộ" class="school-logo-img" />
+      <div class="brand-text">
+        <h1 id="topbar-school-name">TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ</h1>
+        <p id="topbar-school-sub">HỆ THỐNG HỌC TẬP TRỰC TUYẾN VÀ CẤP CHỨNG CHỈ MÔN TIẾNG ANH</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn btn-ghost-light btn-sm" onclick="app.toggleChatWindow()">
+        Trợ lý học tập AI
+      </button>
+      <button class="btn btn-ghost-light btn-sm" onclick="app.openVerifyModal()">
+        Tra cứu chứng chỉ
+      </button>
+      <div id="topbar-user-area" class="hidden">
+        <span class="user-pill" id="topbar-user-info"></span>
+        <button class="btn btn-ghost-light btn-sm" onclick="app.logout()">Đăng xuất</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAN HINH 1: DANG NHAP NOI BO NHA TRUONG -->
+  <section id="view-login" class="auth-wrapper">
+    <div class="auth-hero">
+      <div>
+        <span class="auth-badge">Cổng Học Tập Nội Bộ THPT</span>
+        <h2>Học Tập Môn Tiếng Anh và Nhận Chứng Chỉ Hoàn Thành Khóa Học</h2>
+        <p style="color:#cbd5e1; font-size:14px;">
+          Nền tảng hỗ trợ học sinh khối 10, 11 và 12 tự học kiến thức trọng tâm, rèn luyện kỹ năng ngôn ngữ và tham gia đánh giá năng lực cấp chứng chỉ nội bộ.
+        </p>
+        <ul class="feature-list">
+          <li><strong>Học liệu bám sát chương trình:</strong> Bài giảng lý thuyết, hệ thống từ vựng kèm phát âm chuẩn và tài liệu luyện nghe.</li>
+          <li><strong>Kiểm tra và đánh giá tự động:</strong> Bài tập thực hành sau mỗi bài học và bài kiểm tra đánh giá cuối khóa học.</li>
+          <li><strong>Chứng chỉ điện tử xác thực:</strong> Cấp giấy chứng nhận hoàn thành khóa học có mã định danh và mã QR phục vụ đối soát.</li>
+        </ul>
+      </div>
+
+      <div class="demo-accounts-box">
+        <h4>Hướng dẫn đăng nhập:</h4>
+        <p style="font-size:13.5px; color:#cbd5e1; line-height:1.6;">
+          Học sinh đăng nhập bằng <strong>Mã học sinh</strong> do nhà trường cấp (ghi trong danh sách lớp). Mật khẩu mặc định ban đầu: <strong>123</strong>. Nếu quên hoặc không đăng nhập được, vui lòng liên hệ giáo viên bộ môn Ngoại ngữ.
+        </p>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <img src="logo.png" alt="Logo Trường THPT Số 2 Nguyễn Trường Tộ" style="width:52px; height:52px; object-fit:contain; border-radius:50%; border:1px solid #cbd5e1;" />
+        <div>
+          <h3 style="font-size: 18px; margin-bottom: 2px; color: #0f2757;">Đăng Nhập Hệ Thống</h3>
+          <p style="font-size: 13px; color: #475569; font-weight: 600;">Trường THPT Số 2 Nguyễn Trường Tộ</p>
+        </div>
+      </div>
+      <p style="font-size: 13.5px; color: #64748b; margin-bottom: 14px;">
+        Sử dụng mã số học sinh hoặc tài khoản giáo viên do nhà trường cấp.
+      </p>
+
+      <div class="internal-notice">
+        <strong>Lưu ý:</strong> Chế độ bảo mật nội bộ đang bật. Học sinh cần đăng nhập bằng mã số do nhà trường cung cấp.
+      </div>
+
+      <form onsubmit="app.handleLogin(event)">
+        <div class="form-group">
+          <label>Mã số học sinh hoặc tài khoản quản trị</label>
+          <input type="text" id="login-username" class="form-control" placeholder="Ví dụ: 64000731-00-3978 hoặc admin" required />
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="login-password" class="form-control" placeholder="Nhập mật khẩu..." required />
+        </div>
+        <div id="login-error" class="hidden" style="color: #b91c1c; font-size: 13px; margin-bottom: 10px; font-weight: 600;"></div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px; font-size: 14px;">
+          Đăng nhập
+        </button>
+      </form>
+
+      <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e2e8f0; text-align: center;">
+        <p style="font-size: 13px; color: #64748b; margin-bottom: 8px;">
+          Xác thực tính hợp lệ của chứng chỉ đã cấp
+        </p>
+        <button class="btn btn-outline btn-sm" onclick="app.openVerifyModal()">
+          Tra cứu mã chứng chỉ
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAN HINH 2: KHONG GIAN CHINH -->
+  <main id="view-main" class="main-container hidden">
+    <div id="nav-tabs-bar" class="nav-tabs no-print"></div>
+    <div id="main-dynamic-content"></div>
+  </main>
+
+  <!-- MODAL TRA CUU CHUNG CHI -->
+  <div id="modal-verify" class="modal-backdrop hidden no-print">
+    <div class="modal-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3 style="font-size:17px; color:#0f2757;">Tra cứu và xác thực chứng chỉ</h3>
+        <button class="btn btn-outline btn-sm" onclick="app.closeVerifyModal()">Đóng</button>
+      </div>
+      <p style="font-size:13.5px; color:#475569; margin-bottom:14px;">
+        Nhập mã số chứng chỉ được ghi trên phôi bằng (ví dụ: <code>CERT-THPT-2026-1001</code>) để đối chiếu thông tin trong hồ sơ gốc.
+      </p>
+      <div style="display:flex; gap:8px; margin-bottom:16px;">
+        <input type="text" id="verify-input-code" class="form-control" placeholder="Nhập mã chứng chỉ (Ví dụ: CERT-THPT-2026-1001)..." />
+        <button class="btn btn-primary" onclick="app.verifyCertificateCode()">Kiểm tra</button>
+      </div>
+      <div id="verify-result-box"></div>
+    </div>
+  </div>
+
+  <!-- MODAL DUNG CHUNG CHO QUAN TRI VIEN -->
+  <div id="modal-generic" class="modal-backdrop hidden no-print">
+    <div class="modal-box" id="modal-generic-content"></div>
+  </div>
+
+  <!-- NUT MO KHUNG TRO LY HOC TAP AI -->
+  <button id="ai-chat-floating-btn" class="chat-floating-btn no-print" onclick="app.toggleChatWindow()">
+    <span class="status-dot"></span>
+    <span>Trợ lý học tập AI</span>
+  </button>
+
+  <!-- CUA SO CHATBOT TRO LY HOC TAP AI -->
+  <div id="ai-chat-window" class="chat-window hidden no-print">
+    <div class="chat-header">
+      <div>
+        <div class="chat-header-title">
+          <h4 style="font-size:14px; font-weight:700; color:#ffffff; margin:0;">Trợ lý học tập AI</h4>
+          <span class="chat-status-pill">
+            <span class="status-dot"></span>
+            Trực tuyến
+          </span>
+        </div>
+        <p style="font-size:11.5px; color:#cbd5e1; margin-top:2px;">Trường THPT Số 2 Nguyễn Trường Tộ</p>
+      </div>
+      <div style="display:flex; gap:6px;">
+        <button class="btn btn-ghost-light btn-sm" style="padding:2px 8px; font-size:11.5px;" onclick="app.requestPersonalReminder()">Nhắc nhở học tập</button>
+        <button class="btn btn-ghost-light btn-sm" style="padding:2px 8px; font-size:11.5px;" onclick="app.toggleChatWindow()">Đóng</button>
+      </div>
+    </div>
+
+    <!-- KHUNG THONG BAO TIEN DO HOC TAP CUA HOC SINH -->
+    <div id="chat-reminder-card" class="chat-reminder-box"></div>
+
+    <!-- LICH SU CUOC TRO CHUYEN -->
+    <div id="chat-messages-container" class="chat-body"></div>
+
+    <!-- GOI Y CAC CAU HOI HOC TAP PHO BIEN -->
+    <div class="quick-prompts-bar">
+      <span style="font-size:11.5px; font-weight:700; color:#475569; display:block; margin-bottom:4px;">Gợi ý câu hỏi trợ lý:</span>
+      <div class="quick-prompts-list">
+        <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Hôm nay tôi cần học những nội dung gì?')">Tiến độ và bài tiếp theo</button>
+        <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Giải thích ngữ pháp câu bị động trong tiếng Anh')">Ngữ pháp câu bị động</button>
+        <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Phân biệt thì hiện tại đơn và hiện tại tiếp diễn')">Hiện tại đơn & tiếp diễn</button>
+        <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Phân biệt cách dùng Must và Have to')">Must & Have to</button>
+        <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Điều kiện để được cấp chứng chỉ hoàn thành khóa học là gì?')">Điều kiện cấp chứng chỉ</button>
+        <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Phương pháp rèn luyện kỹ năng nghe tiếng Anh hiệu quả')">Kỹ năng luyện nghe</button>
+      </div>
+    </div>
+
+    <!-- KHUNG NHAP CAU HOI -->
+    <form class="chat-footer" onsubmit="app.handleChatSubmit(event)">
+      <input type="text" id="chat-user-input" class="form-control" placeholder="Hỏi trợ lý về ngữ pháp, từ vựng, bài học..." autocomplete="off" required />
+      <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Gửi</button>
+    </form>
+  </div>
+
+  <!-- MAN HINH CANH BAO VI PHAM QUY CHE TOAN MAN HINH KHI THI -->
+  <div id="exam-violation-overlay" class="hidden no-print">
+    <div class="exam-violation-modal">
+      <div class="exam-violation-header">CẢNH BÁO VI PHẠM QUY CHẾ THI</div>
+      <p style="font-size:14.5px; color:#1e293b; line-height:1.6; margin-bottom:14px;">
+        Hệ thống phát hiện bạn vừa <strong>THOÁT KHỎI CHẾ ĐỘ TOÀN MÀN HÌNH</strong> hoặc chuyển cửa sổ làm việc trong khi bài thi đang diễn ra!
+      </p>
+      <div id="exam-violation-warning-text" style="background-color:#fee2e2; border:1px solid #fca5a5; color:#991b1b; padding:10px 14px; border-radius:4px; font-weight:700; margin-bottom:18px;">
+        Số lần vi phạm: 1/3. Nếu tiếp tục vi phạm quá 3 lần, hệ thống sẽ tự động đình chỉ bài thi, khóa kết quả và trừ điểm.
+      </div>
+      <p style="font-size:13px; color:#64748b; margin-bottom:18px;">
+        Quy chế khảo thí trực tuyến của Trường THPT Số 2 Nguyễn Trường Tộ yêu cầu học sinh làm bài nghiêm túc ở chế độ toàn màn hình 100%.
+      </p>
+      <button id="btn-return-exam-fs" class="btn btn-accent" style="padding:12px 24px; font-size:14px; width:100%;" onclick="app.resumeExamFullScreen()">
+        Quay lại toàn màn hình để tiếp tục làm bài thi
+      </button>
+    </div>
+  </div>
+
+  <script src="students.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
