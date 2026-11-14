@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trường THPT Số 2 Nguyễn Trường Tộ - Hệ Thống Học Tiếng Anh và Cấp Chứng Chỉ</title>
-  <link rel="icon" type="image/png" href="logo.png" />
+  <title>Đoàn trường THPT Số 2 Nguyễn Trường Tộ - Hệ Thống Học Tiếng Anh và Cấp Chứng Chỉ</title>
+  <link rel="icon" type="image/webp" href="logo_doan.webp" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Thanh Header Truong Hoc -->
   <header class="school-topbar no-print">
     <div class="brand-wrap">
-      <img src="logo.png" alt="Logo Trường THPT Số 2 Nguyễn Trường Tộ" class="school-logo-img" />
+      <img src="logo_doan.webp" alt="Logo Đoàn Trường THPT Số 2 Nguyễn Trường Tộ" class="school-logo-img" />
       <div class="brand-text">
-        <h1 id="topbar-school-name">TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ</h1>
+        <h1 id="topbar-school-name">ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ</h1>
         <p id="topbar-school-sub">HỆ THỐNG HỌC TẬP TRỰC TUYẾN VÀ CẤP CHỨNG CHỈ MÔN TIẾNG ANH</p>
       </div>
     </div>
@@ -57,10 +57,10 @@
 
     <div class="auth-card">
       <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
-        <img src="logo.png" alt="Logo Trường THPT Số 2 Nguyễn Trường Tộ" style="width:52px; height:52px; object-fit:contain; border-radius:50%; border:1px solid #cbd5e1;" />
+        <img src="logo_doan.webp" alt="Logo Đoàn Trường THPT Số 2 Nguyễn Trường Tộ" style="height:56px; width:auto; max-width:65px; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));" />
         <div>
           <h3 style="font-size: 18px; margin-bottom: 2px; color: #0f2757;">Đăng Nhập Hệ Thống</h3>
-          <p style="font-size: 13px; color: #475569; font-weight: 600;">Trường THPT Số 2 Nguyễn Trường Tộ</p>
+          <p style="font-size: 13px; color: #475569; font-weight: 600;">Đoàn trường THPT Số 2 Nguyễn Trường Tộ</p>
         </div>
       </div>
       <p style="font-size: 13.5px; color: #64748b; margin-bottom: 14px;">
@@ -162,6 +162,7 @@
       <span style="font-size:11.5px; font-weight:700; color:#475569; display:block; margin-bottom:4px;">Gợi ý câu hỏi trợ lý:</span>
       <div class="quick-prompts-list">
         <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Hôm nay tôi cần học những nội dung gì?')">Tiến độ và bài tiếp theo</button>
+        <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Link sách giáo khoa và học liệu số Hoclieu.vn các khối')">Sách giáo khoa Hoclieu.vn</button>
         <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Giải thích ngữ pháp câu bị động trong tiếng Anh')">Ngữ pháp câu bị động</button>
         <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Phân biệt thì hiện tại đơn và hiện tại tiếp diễn')">Hiện tại đơn & tiếp diễn</button>
         <button class="quick-prompt-btn" onclick="app.handleQuickPrompt('Phân biệt cách dùng Must và Have to')">Must & Have to</button>
@@ -197,6 +198,7 @@
   </div>
 
   <script src="students.js"></script>
+  <script src="qrcode.min.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>

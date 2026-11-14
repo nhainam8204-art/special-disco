@@ -11,6 +11,9 @@ const app = {
   activeLessonSubTab: "theory",
   examTimerInterval: null,
   examRemainingSeconds: 0,
+  adminStudentsSearchQuery: "",
+  adminStudentsCurrentPage: 1,
+  adminStudentsPageSize: 20,
 
   async init() {
     await this.loadState();
@@ -38,54 +41,61 @@ const app = {
       await this.saveState();
     }
 
-    // Dong bo ten truong va ten quan tri vien (Thay Nguyen Hai Nam)
+        // Dong bo ten don vi chu quan (Doan truong THPT So 2 Nguyen Truong To) va phoi chung chi
     let needsSave = false;
     if (this.state?.schoolConfig) {
-      if (this.state.schoolConfig.schoolName !== "TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ") {
-        this.state.schoolConfig.schoolName = "TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ";
-        needsSave = true;
-      }
-      if (this.state.schoolConfig.headTeacherName !== "Thầy Nguyễn Hải Nam") {
-        this.state.schoolConfig.headTeacherName = "Thầy Nguyễn Hải Nam";
-        needsSave = true;
-      }
-      if (this.state.schoolConfig.principalName !== "Trương Quang Mẫn") {
-        this.state.schoolConfig.principalName = "Trương Quang Mẫn";
-        needsSave = true;
-      }
-    }
-
-    if (this.state?.users) {
-      const adminUser = this.state.users.find(u => u.role === "admin" || u.username === "admin");
-      if (adminUser && adminUser.fullName !== "Thầy Nguyễn Hải Nam") {
-        adminUser.fullName = "Thầy Nguyễn Hải Nam";
-        adminUser.email = "nam.nguyenhai@thptso2nguyentruongto.edu.vn";
-        needsSave = true;
-      }
-    }
-
-    if (this.state?.courses) {
-      this.state.courses.forEach(c => {
-        if (c.teacher !== "Thầy Nguyễn Hải Nam") {
-          c.teacher = "Thầy Nguyễn Hải Nam";
+      if (!this.state.schoolConfig.customized) {
+        if (this.state.schoolConfig.schoolName !== "ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ") {
+          this.state.schoolConfig.schoolName = "ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ";
           needsSave = true;
         }
-      });
+        if (this.state.schoolConfig.signerTitle !== "PHÓ BÍ THƯ ĐOÀN TRƯỜNG") {
+          this.state.schoolConfig.signerTitle = "PHÓ BÍ THƯ ĐOÀN TRƯỜNG";
+          needsSave = true;
+        }
+        if (this.state.schoolConfig.signerName !== "Phạm Hiệp Lâm") {
+          this.state.schoolConfig.signerName = "Phạm Hiệp Lâm";
+          needsSave = true;
+        }
+      }
     }
 
     if (this.state?.certificates) {
       this.state.certificates.forEach(c => {
-        if (c.schoolName !== "TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ") {
-          c.schoolName = "TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ";
-          needsSave = true;
-        }
-        if (c.headTeacherName !== "Thầy Nguyễn Hải Nam") {
-          c.headTeacherName = "Thầy Nguyễn Hải Nam";
-          needsSave = true;
-        }
-        if (c.principalName !== "Trương Quang Mẫn") {
-          c.principalName = "Trương Quang Mẫn";
-          needsSave = true;
+        c.schoolName = "ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ";
+        c.signerTitle = "PHÓ BÍ THƯ ĐOÀN TRƯỜNG";
+        c.signerName = "Phạm Hiệp Lâm";
+        needsSave = true;
+      });
+    }
+
+    // Dong bo hoc lieu so va noi dung khoa hoc tu DEFAULT_SCHOOL_DATA neu co
+    if (this.state?.courses && defData?.courses) {
+      defData.courses.forEach(dc => {
+        const c = this.state.courses.find(x => x.id === dc.id);
+        if (c) {
+          if (!c.hoclieuUrl || c.hoclieuUrl !== dc.hoclieuUrl) {
+            c.hoclieuUrl = dc.hoclieuUrl;
+            c.hoclieuTitle = dc.hoclieuTitle;
+            needsSave = true;
+          }
+          // Cap nhat noi dung bai hoc va de thi khi co phien ban moi
+          if (dc.lessons && (!c.lessons || c.lessons.length !== dc.lessons.length)) {
+            c.lessons = dc.lessons;
+            needsSave = true;
+          }
+          if (dc.finalExam && (!c.finalExam || c.finalExam.length !== dc.finalExam.length)) {
+            c.finalExam = dc.finalExam;
+            needsSave = true;
+          }
+          if (dc.duration && c.duration !== dc.duration) {
+            c.duration = dc.duration;
+            needsSave = true;
+          }
+          if (dc.examDurationMinutes && c.examDurationMinutes !== dc.examDurationMinutes) {
+            c.examDurationMinutes = dc.examDurationMinutes;
+            needsSave = true;
+          }
         }
       });
     }
@@ -140,7 +150,11 @@ const app = {
   },
 
   async saveState() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state));
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state));
+    } catch (err) {
+      console.warn("LocalStorage save warning (quota exceeded):", err);
+    }
     try {
       await fetch("/api/state", {
         method: "POST",
@@ -377,9 +391,16 @@ const app = {
             </div>
           </div>
           <div class="course-footer">
-            <button class="btn btn-primary btn-sm" onclick="app.openCourseClassroom('${course.id}')">
-              ${doneL > 0 ? 'Tiếp tục học' : 'Vào học'}
-            </button>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+              <button class="btn btn-primary btn-sm" onclick="app.openCourseClassroom('${course.id}')">
+                ${doneL > 0 ? 'Tiếp tục học' : 'Vào học'}
+              </button>
+              ${course.hoclieuUrl ? `
+                <a href="${course.hoclieuUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Mở SGK điện tử Hoclieu.vn" style="display:inline-flex; align-items:center; gap:4px; font-size:12px;">
+                  <span>📖</span> SGK Hoclieu.vn ↗
+                </a>
+              ` : ''}
+            </div>
             ${cert ? `
               <button class="btn btn-accent btn-sm" onclick="app.switchTab('certificates')">
                 Xem chứng chỉ
@@ -477,9 +498,23 @@ const app = {
     }
 
     return `
-      <div style="margin-bottom:14px; display:flex; justify-content:space-between; align-items:center;">
-        <button class="btn btn-outline btn-sm" onclick="app.switchTab('courses')">Quay lại danh mục khóa học</button>
-        <span class="badge badge-info">Khối ${course.grade} - ${course.level}</span>
+      <div style="margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+          <button class="btn btn-outline btn-sm" onclick="app.switchTab('courses')">← Quay lại danh mục khóa học</button>
+          ${course.hoclieuUrl ? `
+            <button class="btn btn-primary btn-sm" onclick="app.selectLessonSubTab('hoclieu')">
+              📖 Sách Giáo Khoa & Học Liệu Số (Hoclieu.vn)
+            </button>
+          ` : ''}
+        </div>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <span class="badge badge-info">Khối ${course.grade} - ${course.level}</span>
+          ${course.hoclieuUrl ? `
+            <a href="${course.hoclieuUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Mở trang Hoclieu.vn trong tab mới">
+              Mở Tab Mới ↗
+            </a>
+          ` : ''}
+        </div>
       </div>
 
       <div class="classroom-layout">
@@ -487,6 +522,13 @@ const app = {
           <div class="sidebar-header">
             <h3>${course.title}</h3>
             <p style="font-size:12px; color:#64748b; margin-top:4px;">Giáo viên: ${course.teacher}</p>
+            ${course.hoclieuUrl ? `
+              <div style="margin-top:10px;">
+                <button class="btn btn-outline btn-sm" style="width:100%; font-size:12px; justify-content:center; display:flex; align-items:center; gap:6px;" onclick="app.selectLessonSubTab('hoclieu')">
+                  <span>📖</span> Xem SGK Lớp ${course.grade}
+                </button>
+              </div>
+            ` : ''}
           </div>
           ${sidebarLessonsHtml}
           <div style="padding:14px; background-color:#f8fafc; border-top:1px solid #cbd5e1;">
@@ -495,11 +537,19 @@ const app = {
             </div>
             <p style="font-size:12px; color:#475569; margin-bottom:10px; line-height:1.4;">
               Tiêu chuẩn đạt chứng chỉ: Từ <strong>${this.state.schoolConfig.passScorePercent}%</strong> trở lên (${course.finalExam.length} câu hỏi).
-              ${!allLessonsDone ? '<br/>Lưu ý: Khuyến khích hoàn thành đầy đủ bài học trước khi làm bài thi.' : '<br/>Trạng thái: Đã hoàn thành đủ các bài học.'}
+              ${!allLessonsDone 
+                ? `<br/><span style="color:#b91c1c; font-weight:600;">🔒 Chưa mở khóa: Cần học và hoàn thành đầy đủ ${course.lessons.length} bài học trước khi thi! (${course.lessons.filter(l => prog.completedLessons.includes(l.id)).length}/${course.lessons.length} bài đã hoàn thành).</span>` 
+                : `<br/><span style="color:#15803d; font-weight:600;">🔓 Đã mở khóa: Bạn đã hoàn thành đủ ${course.lessons.length} bài học. Sẵn sàng vào thi!</span>`}
             </p>
-            <button class="btn btn-accent" style="width:100%;" onclick="app.startFinalExam()">
-              Làm bài kiểm tra cuối khóa
-            </button>
+            ${!allLessonsDone ? `
+              <button class="btn btn-outline" style="width:100%; opacity:0.65; cursor:not-allowed;" onclick="alert('BẠN CHƯA THỂ LÀM BÀI THI:\\n\\nTheo quy chế của Đoàn trường, bạn cần học và hoàn thành đầy đủ tất cả ${course.lessons.length} bài học trong khóa này trước khi làm bài kiểm tra cuối khóa.')">
+                🔒 Khóa bài thi (Chưa hoàn thành bài học)
+              </button>
+            ` : `
+              <button class="btn btn-accent" style="width:100%; font-weight:700;" onclick="app.openExamBriefing()">
+                Vào làm bài kiểm tra cuối khóa ✍️
+              </button>
+            `}
           </div>
         </aside>
 
@@ -532,7 +582,28 @@ const app = {
         <div style="font-size:14.5px; line-height:1.7;">
           ${lesson.theoryHtml}
         </div>
-        <div style="margin-top:24px; padding-top:16px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+        ${course.hoclieuUrl ? `
+          <div class="hoclieu-ref-card">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:26px;">📖</span>
+              <div>
+                <strong style="color:#0f2757; font-size:13.5px;">Tài liệu SGK điện tử chính thức (NXB Giáo Dục Việt Nam):</strong>
+                <p style="font-size:12.5px; color:#475569; margin:2px 0 0;">
+                  Học sinh có thể xem bản điện tử đầy đủ của sách giáo khoa Tiếng Anh Lớp ${course.grade} Global Success để tra cứu thêm ngữ pháp và ví dụ.
+                </p>
+              </div>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-primary btn-sm" onclick="app.selectLessonSubTab('hoclieu')">
+                Xem SGK tại đây
+              </button>
+              <a href="${course.hoclieuUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                Mở Tab Mới ↗
+              </a>
+            </div>
+          </div>
+        ` : ''}
+        <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
           <span style="font-size:13px; color:#64748b;">Nội dung tiếp theo: Từ vựng và luyện phát âm chuẩn</span>
           <button class="btn btn-primary" onclick="app.selectLessonSubTab('vocab')">Chuyển sang phần Từ vựng</button>
         </div>
@@ -601,6 +672,13 @@ const app = {
             </button>
           </div>
         </div>
+
+        ${course.hoclieuUrl ? `
+          <div style="background-color:#f0fdf4; border:1px solid #bbf7d0; padding:10px 14px; border-radius:var(--radius-sm); margin-bottom:14px; font-size:12.5px; color:#166534; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span>🎧 Luyện nghe thêm toàn bộ audio chuẩn bản xứ của các bài học tại cổng <strong>Hoclieu.vn</strong> (SGK Tiếng Anh Lớp ${course.grade}).</span>
+            <button class="btn btn-outline btn-sm" style="font-size:11.5px; padding:3px 8px;" onclick="app.selectLessonSubTab('hoclieu')">Mở SGK Nghe</button>
+          </div>
+        ` : ''}
 
         <h4 style="margin-bottom:8px; font-size:14px;">Nội dung bài đối thoại:</h4>
         ${linesHtml}
@@ -702,6 +780,23 @@ const app = {
               `;
             }).join("")}
           </div>
+
+          ${course.hoclieuUrl ? `
+            <div class="hoclieu-quiz-support-banner" style="background:#f8fafc; border-color:#cbd5e1; margin-top:16px;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="font-size:24px;">💡</span>
+                <div>
+                  <strong style="color:#0f2757; font-size:13px;">Tiếp tục củng cố kiến thức:</strong>
+                  <p style="font-size:12px; color:#475569; margin:2px 0 0;">
+                    Rèn luyện thêm các dạng bài tập tương tự trong sách bài tập (Workbook) Tiếng Anh Lớp ${course.grade} trên hệ thống Hoclieu.vn.
+                  </p>
+                </div>
+              </div>
+              <a href="${course.hoclieuUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                Luyện thêm trên Hoclieu.vn ↗
+              </a>
+            </div>
+          ` : ''}
         `;
       } else {
         // Not attempted yet
@@ -725,6 +820,25 @@ const app = {
             1. Đề bài, câu hỏi và đáp án biên soạn 100% bằng Tiếng Anh.<br/>
             2. <strong>QUY ĐỊNH 01 LẦN DUY NHẤT:</strong> Học sinh chỉ được thực hiện nộp bài 01 lần. Khi làm sai, hệ thống <strong>TUYỆT ĐỐI KHÔNG CHO PHÉP LÀM LẠI</strong> mà sẽ lưu điểm trực tiếp vào hồ sơ học bạ. Hãy kiểm tra thật kỹ trước khi nộp.
           </div>
+
+          ${course.hoclieuUrl ? `
+            <div class="hoclieu-quiz-support-banner">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span style="font-size:24px;">📝</span>
+                <div>
+                  <strong style="color:#0f2757; font-size:13px;">Ôn luyện trước khi nộp bài (Quy định 01 Lần duy nhất):</strong>
+                  <p style="font-size:12px; color:#475569; margin:2px 0 0;">
+                    Để tránh mất điểm học bạ, bạn có thể tham khảo lại bài học và làm các bài tập trắc nghiệm tương tác trên cổng <strong>Hoclieu.vn Lớp ${course.grade}</strong>.
+                  </p>
+                </div>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <button type="button" class="btn btn-outline btn-sm" onclick="app.selectLessonSubTab('hoclieu')">Xem SGK</button>
+                <a href="${course.hoclieuUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Mở Hoclieu.vn ↗</a>
+              </div>
+            </div>
+          ` : ''}
+
           <form onsubmit="app.submitLessonQuiz(event, '${lesson.id}')">
             ${questionsHtml}
             <div style="margin-top:16px; display:flex; justify-content:flex-end;">
@@ -735,6 +849,49 @@ const app = {
           </form>
         `;
       }
+    } else if (this.activeLessonSubTab === "hoclieu") {
+      const bookUrl = course.hoclieuUrl || "https://hoclieu.vn";
+      tabBody = `
+        <div class="hoclieu-wrapper">
+          <div class="hoclieu-header-bar">
+            <div class="hoclieu-header-info">
+              <h3>
+                <span>📖</span> ${course.hoclieuTitle || `Học liệu số & Sách Giáo Khoa Tiếng Anh Lớp ${course.grade} - Global Success`}
+              </h3>
+              <p>Hệ thống Học Liệu Số & Sách Giáo Khoa Điện Tử - Nhà Xuất Bản Giáo Dục Việt Nam (Bộ GD&ĐT)</p>
+            </div>
+            <div class="hoclieu-actions-group">
+              <a href="${bookUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
+                <span>Mở trong tab mới toàn màn hình</span> ↗
+              </a>
+              <button class="btn btn-outline btn-sm" onclick="app.reloadHoclieuFrame()">
+                Tải lại khung học liệu
+              </button>
+            </div>
+          </div>
+
+          <div class="hoclieu-guide-box">
+            <strong>Hướng dẫn tự học với Học liệu số Hoclieu.vn:</strong>
+            <ul style="margin:6px 0 0 18px; padding:0;">
+              <li><strong>Xem sách giáo khoa trực tuyến:</strong> Lật xem từng trang SGK Tiếng Anh Lớp ${course.grade} Global Success theo đúng chương trình GDPT.</li>
+              <li><strong>Nghe phát âm chuẩn bản xứ:</strong> Bấm vào biểu tượng chiếc loa (Audio) trên từng bài để nghe giọng phát âm chuẩn của người bản xứ.</li>
+              <li><strong>Luyện tập bài tập tương tác:</strong> Thực hành làm các câu hỏi trắc nghiệm, kéo thả và điền từ tương tác trực tiếp trên sách điện tử trước khi làm bài thi của trường.</li>
+            </ul>
+          </div>
+
+          <div class="hoclieu-frame-container">
+            <iframe id="hoclieu-content-frame" src="${bookUrl}" class="hoclieu-iframe" title="${course.hoclieuTitle || 'Hoclieu.vn'}" allow="autoplay; fullscreen; microphone" loading="lazy"></iframe>
+          </div>
+
+          <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center; font-size:12.5px; color:#64748b; flex-wrap:wrap; gap:8px;">
+            <span>Nguồn tài nguyên: Cổng học liệu thông minh <a href="https://hoclieu.vn" target="_blank" rel="noopener noreferrer" style="color:#0f2757; font-weight:600;">Hoclieu.vn</a></span>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-outline btn-sm" onclick="app.selectLessonSubTab('theory')">← Trở lại Lý thuyết</button>
+              <button class="btn btn-primary btn-sm" onclick="app.selectLessonSubTab('quiz')">Chuyển sang Bài tập củng cố →</button>
+            </div>
+          </div>
+        </div>
+      `;
     }
 
     return `
@@ -759,10 +916,22 @@ const app = {
         <button class="sub-tab ${this.activeLessonSubTab === 'quiz' ? 'active' : ''}" onclick="app.selectLessonSubTab('quiz')">
           4. Bài tập củng cố (${(lesson.quiz || []).length} câu)
         </button>
+        <button class="sub-tab ${this.activeLessonSubTab === 'hoclieu' ? 'active' : ''}" onclick="app.selectLessonSubTab('hoclieu')">
+          5. SGK & Học liệu số Hoclieu.vn
+        </button>
       </div>
 
       ${tabBody}
     `;
+  },
+
+  reloadHoclieuFrame() {
+    const frame = document.getElementById("hoclieu-content-frame");
+    if (frame) {
+      const src = frame.src;
+      frame.src = "about:blank";
+      setTimeout(() => { frame.src = src; }, 50);
+    }
   },
 
   speakText(text, lang = "en-US") {
@@ -856,6 +1025,19 @@ const app = {
     this.renderMain();
   },
 
+  openExamBriefing() {
+    const course = this.state.courses.find(c => c.id === this.activeCourseId);
+    if (!course) return;
+    const prog = this.getUserProgress(this.currentUser.id);
+    const allDone = course.lessons.every(l => prog.completedLessons.includes(l.id));
+    if (!allDone) {
+      alert(`BẠN CHƯA THỂ LÀM BÀI THI:\n\nTheo quy chế của Đoàn trường, bạn cần học và hoàn thành đầy đủ tất cả ${course.lessons.length} bài học trong khóa này trước khi làm bài kiểm tra cuối khóa.`);
+      return;
+    }
+    this.activeLessonSubTab = "exam";
+    this.renderMain();
+  },
+
   viewExamResultPanel(courseId) {
     this.activeCourseId = courseId;
     this.activeLessonSubTab = "exam";
@@ -866,12 +1048,17 @@ const app = {
     const course = this.state.courses.find(c => c.id === this.activeCourseId);
     if (!course) return;
     const prog = this.getUserProgress(this.currentUser.id);
+    const allDone = course.lessons.every(l => prog.completedLessons.includes(l.id));
+    if (!allDone) {
+      alert(`BẠN CHƯA THỂ LÀM BÀI THI:\n\nTheo quy chế của Đoàn trường, bạn cần học và hoàn thành đầy đủ tất cả ${course.lessons.length} bài học trong khóa này trước khi làm bài kiểm tra cuối khóa.`);
+      return;
+    }
     if (prog.examAttempts && prog.examAttempts[course.id]) {
-      alert("Học sinh đã hoàn tất bài thi cuối khóa này trước đó. Theo quy chế khảo thí của nhà trường, mỗi học sinh chỉ được làm bài 01 lần duy nhất!");
+      alert("Học sinh đã hoàn tất bài thi cuối khóa này trước đó. Theo quy chế khảo thí của Đoàn trường, mỗi học sinh chỉ được làm bài 01 lần duy nhất!");
       return;
     }
 
-    const agree = confirm("QUY CHẾ PHÒNG THI TRỰC TUYẾN - TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ:\n\n1. Bài thi hiển thị 100% bằng Tiếng Anh.\n2. BẮT BUỘC CHẾ ĐỘ TOÀN MÀN HÌNH: Trình duyệt sẽ tự động kích hoạt toàn màn hình. Học sinh TUYỆT ĐỐI KHÔNG được thoát toàn màn hình hoặc chuyển tab.\n3. Nếu thoát toàn màn hình quá 3 lần, hệ thống sẽ tự động đình chỉ và thu bài thi ngay lập tức.\n4. QUY ĐỊNH 01 LẦN DUY NHẤT: Khi làm sai TUYỆT ĐỐI KHÔNG được làm lại, kết quả sẽ được lưu vĩnh viễn vào học bạ tổng kết.\n\nBạn đã sẵn sàng kích hoạt toàn màn hình và bắt đầu làm bài thi?");
+    const agree = confirm("QUY CHẾ PHÒNG THI TRỰC TUYẾN - ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ:\n\n1. Bài thi hiển thị 100% bằng Tiếng Anh.\n2. BẮT BUỘC CHẾ ĐỘ TOÀN MÀN HÌNH: Trình duyệt sẽ tự động kích hoạt toàn màn hình. Học sinh TUYỆT ĐỐI KHÔNG được thoát toàn màn hình hoặc chuyển tab.\n3. Nếu thoát toàn màn hình quá 3 lần, hệ thống sẽ tự động đình chỉ và thu bài thi ngay lập tức.\n4. QUY ĐỊNH 01 LẦN DUY NHẤT: Khi làm sai TUYỆT ĐỐI KHÔNG được làm lại, kết quả sẽ được lưu vĩnh viễn vào học bạ tổng kết.\n\nBạn đã sẵn sàng kích hoạt toàn màn hình và bắt đầu làm bài thi?");
     if (!agree) return;
 
     this.startFinalExam();
@@ -880,6 +1067,13 @@ const app = {
   async startFinalExam() {
     const course = this.state.courses.find(c => c.id === this.activeCourseId);
     if (!course) return;
+
+    const prog = this.getUserProgress(this.currentUser.id);
+    const allDone = course.lessons.every(l => prog.completedLessons.includes(l.id));
+    if (!allDone) {
+      alert(`BẠN CHƯA THỂ LÀM BÀI THI:\n\nTheo quy chế của Đoàn trường, bạn cần học và hoàn thành đầy đủ tất cả ${course.lessons.length} bài học trong khóa này trước khi làm bài kiểm tra cuối khóa.`);
+      return;
+    }
 
     this.isExamActive = true;
     this.examViolationCount = 0;
@@ -1104,6 +1298,23 @@ const app = {
 
         <h3 style="font-size:16px; color:#0f2757; margin-bottom:12px;">Nội dung đề thi và đáp án chi tiết (English Examination Review):</h3>
         ${questionsReviewHtml}
+
+        ${course.hoclieuUrl ? `
+          <div class="hoclieu-ref-card" style="margin-top:20px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:26px;">📚</span>
+              <div>
+                <strong style="color:#0f2757; font-size:13.5px;">Tiếp tục trau dồi và nâng cao năng lực Tiếng Anh:</strong>
+                <p style="font-size:12.5px; color:#475569; margin:2px 0 0;">
+                  Tham khảo thêm các chuyên đề ngữ pháp nâng cao, bài đọc hiểu và tài liệu bổ trợ bám sát chương trình GDPT trên cổng học liệu thông minh Hoclieu.vn.
+                </p>
+              </div>
+            </div>
+            <a href="${course.hoclieuUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              Mở Học liệu số Hoclieu.vn ↗
+            </a>
+          </div>
+        ` : ''}
       `;
     }
 
@@ -1181,6 +1392,25 @@ const app = {
           </ul>
         </div>
 
+        ${course.hoclieuUrl ? `
+          <div class="hoclieu-exam-support-card">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:28px;">🎯</span>
+              <div>
+                <strong style="color:#1e40af; font-size:14px;">Tài liệu ôn thi chính thức - Cổng Học Liệu Số Quốc Gia:</strong>
+                <p style="font-size:13px; color:#1e3a8a; margin:3px 0 0; line-height:1.5;">
+                  Bài thi cuối khóa bao gồm toàn bộ kiến thức trọng tâm Tiếng Anh Lớp ${course.grade}. Học sinh nên mở <strong>Hoclieu.vn</strong> để rà soát lại từ vựng, ngữ pháp và cấu trúc câu trước khi kích hoạt bài thi (chỉ được thi 01 lần duy nhất).
+                </p>
+              </div>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <a href="${course.hoclieuUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="white-space:nowrap;">
+                Mở Sách Ôn Luyện Hoclieu.vn ↗
+              </a>
+            </div>
+          </div>
+        ` : ''}
+
         <button class="btn btn-accent" style="width:100%; padding:14px; font-size:15px; font-weight:700;" onclick="app.confirmAndStartFinalExam()">
           BẮT ĐẦU BÀI KIỂM TRA VÀ KÍCH HOẠT CHẾ ĐỘ TOÀN MÀN HÌNH
         </button>
@@ -1247,9 +1477,9 @@ const app = {
           score: scorePercent,
           classification,
           issuedDate: todayStr,
-          schoolName: this.state.schoolConfig.schoolName,
-          principalName: this.state.schoolConfig.principalName,
-          headTeacherName: "Thầy Nguyễn Hải Nam"
+          schoolName: this.state.schoolConfig.schoolName || "ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ",
+          signerTitle: this.state.schoolConfig.signerTitle || "PHÓ BÍ THƯ ĐOÀN TRƯỜNG",
+          signerName: this.state.schoolConfig.signerName || "Phạm Hiệp Lâm"
         };
         this.state.certificates.unshift(cert);
       } else {
@@ -1312,22 +1542,22 @@ const app = {
     return `
       <div class="certificate-frame">
         <div>
-          <div style="text-align:center; margin-bottom:6px;">
-            <img src="logo.png" alt="Logo Trường THPT Số 2 Nguyễn Trường Tộ" style="width:68px; height:68px; object-fit:contain; border-radius:50%; border:1px solid #cbd5e1;" />
+          <div style="text-align:center; margin-bottom:12px;">
+            <img src="logo_doan.webp" alt="Huy hiệu Đoàn TNCS Hồ Chí Minh" style="height:96px; width:auto; max-width:110px; object-fit:contain; filter:drop-shadow(0 3px 6px rgba(0,0,0,0.18)); display:inline-block;" />
           </div>
-          <div class="cert-header-republic">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</div>
-          <div style="font-size:12px; font-weight:700; margin-bottom:8px; color:#334155;">Độc lập - Tự do - Hạnh phúc</div>
-          <div class="cert-school-title">${cert.schoolName || this.state.schoolConfig.schoolName}</div>
+          <div class="cert-header-republic">ĐOÀN TNCS HỒ CHÍ MINH - ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ</div>
+          <div style="font-size:12px; font-weight:700; margin-bottom:8px; color:#15803d; text-transform:uppercase;">TUỔI TRẺ SÁNG TẠO - TIÊN PHONG HỌC TẬP VÀ RÈN LUYỆN</div>
+          <div class="cert-school-title">${cert.schoolName || this.state.schoolConfig.schoolName || "ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ"}</div>
           <div class="cert-main-heading">CERTIFICATE OF COMPLETION</div>
-          <div class="cert-sub-heading">GIẤY CHỨNG NHẬN HOÀN THÀNH KHÓA HỌC TIẾNG ANH</div>
+          <div class="cert-sub-heading">GIẤY CHỨNG NHẬN HOÀN THÀNH KHÓA BỒI DƯỠNG TIẾNG ANH</div>
 
-          <p style="font-size:14px; color:#475569; margin-top:10px;">Ban Giám hiệu và Tổ Ngoại ngữ chứng nhận học sinh:</p>
+          <p style="font-size:14px; color:#475569; margin-top:10px;">Ban Chấp Hành Đoàn Trường THPT Số 2 Nguyễn Trường Tộ chứng nhận đoàn viên, thanh niên:</p>
           <div class="cert-student-name">${cert.studentName}</div>
           <p style="font-size:13.5px; color:#334155; margin-bottom:8px;">
-            Mã số học sinh: <strong>${cert.userId}</strong> &nbsp;|&nbsp; Lớp: <strong>${cert.className}</strong> (Khối ${cert.grade})
+            Mã số học sinh: <strong>${cert.userId}</strong> &nbsp;|&nbsp; Chi đoàn Lớp: <strong>${cert.className}</strong> (Khối ${cert.grade})
           </p>
 
-          <p style="font-size:14px; color:#475569;">Đã hoàn thành chương trình bồi dưỡng và vượt qua kỳ kiểm tra đánh giá năng lực:</p>
+          <p style="font-size:14px; color:#475569;">Đã hoàn thành chương trình bồi dưỡng và vượt qua kỳ kiểm tra đánh giá năng lực môn Tiếng Anh:</p>
           <div class="cert-course-title">${cert.courseTitle}</div>
 
           <div style="display:inline-flex; gap:16px; background-color:#f8fafc; border:1px solid #cbd5e1; padding:6px 18px; border-radius:var(--radius-sm); margin:10px 0; font-size:13.5px;">
@@ -1342,21 +1572,16 @@ const app = {
             <div style="text-align:center;">
               <canvas class="qr-canvas" data-code="${cert.certId}" width="88" height="88" style="border:1px solid #cbd5e1; padding:3px; background-color:#ffffff;"></canvas>
               <div style="font-size:11.5px; color:#475569; margin-top:4px;">
-                Mã số: <strong>${cert.certId}</strong><br/>
+                Mã số chứng chỉ: <strong>${cert.certId}</strong><br/>
                 Ngày cấp: ${cert.issuedDate}
               </div>
             </div>
 
             <div style="text-align:center;">
-              <div style="font-size:12.5px; font-weight:700; color:#334155; text-transform:uppercase;">TỔ TRƯỞNG CHUYÊN MÔN</div>
-              <div style="height:38px; display:flex; align-items:center; justify-content:center; font-size:13px; color:#64748b; font-style:italic;">(Đã ký xác nhận)</div>
-              <div style="font-size:13.5px; font-weight:700; color:#0f2757;">Thầy Nguyễn Hải Nam</div>
-            </div>
-
-            <div style="text-align:center;">
-              <div style="font-size:12.5px; font-weight:700; color:#334155; text-transform:uppercase;">HIỆU TRƯỞNG</div>
-              <div class="cert-seal">TRƯỜNG THPT SỐ 2<br/>NGUYỄN TRƯỜNG TỘ<br/>ĐÃ XÁC THỰC</div>
-              <div style="font-size:13.5px; font-weight:700; color:#0f2757;">${cert.principalName || this.state.schoolConfig.principalName}</div>
+              <div style="font-size:12px; font-weight:700; color:#334155; text-transform:uppercase;">TM. BAN CHẤP HÀNH ĐOÀN TRƯỜNG</div>
+              <div style="font-size:12.5px; font-weight:800; color:#0f2757; margin-top:2px; text-transform:uppercase;">${cert.signerTitle || this.state.schoolConfig.signerTitle || "PHÓ BÍ THƯ ĐOÀN TRƯỜNG"}</div>
+              <img src="dau_doan_truong.png" alt="Con dấu Ban Chấp Hành Đoàn Trường THPT Số 2 Nguyễn Trường Tộ" class="cert-seal" />
+              <div style="font-size:14px; font-weight:700; color:#0f2757;">${cert.signerName || this.state.schoolConfig.signerName || "Phạm Hiệp Lâm"}</div>
             </div>
           </div>
 
@@ -1374,45 +1599,82 @@ const app = {
     const canvases = document.querySelectorAll(".qr-canvas");
     canvases.forEach(canvas => {
       const code = canvas.getAttribute("data-code") || "CERT";
-      const ctx = canvas.getContext("2d");
-      const size = 21;
-      const cell = canvas.width / size;
-      ctx.fillStyle = "#ffffff";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#0f2757";
+      const origin = window.location.origin || "http://localhost:8080";
+      const verifyUrl = `${origin}/?verify=${encodeURIComponent(code)}`;
 
-      const drawFinder = (r0, c0) => {
-        for (let r = 0; r < 7; r++) {
-          for (let c = 0; c < 7; c++) {
-            if (r === 0 || r === 6 || c === 0 || c === 6 || (r >= 2 && r <= 4 && c >= 2 && c <= 4)) {
-              ctx.fillRect((c0 + c) * cell, (r0 + r) * cell, Math.ceil(cell), Math.ceil(cell));
+      if (window.QRCode && QRCode.toCanvas) {
+        QRCode.toCanvas(canvas, verifyUrl, { width: 88, margin: 1, color: { dark: "#0f2757", light: "#ffffff" } }, () => {});
+      } else if (window.QRCode) {
+        try {
+          const tempDiv = document.createElement("div");
+          new QRCode(tempDiv, {
+            text: verifyUrl,
+            width: 88,
+            height: 88,
+            colorDark: "#0f2757",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.M
+          });
+          setTimeout(() => {
+            const img = tempDiv.querySelector("img");
+            const cv = tempDiv.querySelector("canvas");
+            const ctx = canvas.getContext("2d");
+            if (cv) {
+              ctx.drawImage(cv, 0, 0, canvas.width, canvas.height);
+            } else if (img && img.src) {
+              const image = new Image();
+              image.onload = () => ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+              image.src = img.src;
             }
-          }
+          }, 50);
+        } catch (e) {
+          this.drawFallbackQr(canvas, code);
         }
-      };
-
-      drawFinder(0, 0);
-      drawFinder(0, size - 7);
-      drawFinder(size - 7, 0);
-
-      let hash = 2166136261;
-      for (let i = 0; i < code.length; i++) {
-        hash ^= code.charCodeAt(i);
-        hash = Math.imul(hash, 16777619);
-      }
-
-      for (let r = 0; r < size; r++) {
-        for (let c = 0; c < size; c++) {
-          const inFinder = (r < 8 && c < 8) || (r < 8 && c >= size - 8) || (r >= size - 8 && c < 8);
-          if (inFinder) continue;
-          hash ^= (r * 31 + c * 17);
-          hash = Math.imul(hash, 16777619);
-          if ((Math.abs(hash) % 10) < 5) {
-            ctx.fillRect(c * cell, r * cell, Math.ceil(cell), Math.ceil(cell));
-          }
-        }
+      } else {
+        this.drawFallbackQr(canvas, code);
       }
     });
+  },
+
+  drawFallbackQr(canvas, code) {
+    const ctx = canvas.getContext("2d");
+    const size = 21;
+    const cell = canvas.width / size;
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#0f2757";
+
+    const drawFinder = (r0, c0) => {
+      for (let r = 0; r < 7; r++) {
+        for (let c = 0; c < 7; c++) {
+          if (r === 0 || r === 6 || c === 0 || c === 6 || (r >= 2 && r <= 4 && c >= 2 && c <= 4)) {
+            ctx.fillRect((c0 + c) * cell, (r0 + r) * cell, Math.ceil(cell), Math.ceil(cell));
+          }
+        }
+      }
+    };
+
+    drawFinder(0, 0);
+    drawFinder(0, size - 7);
+    drawFinder(size - 7, 0);
+
+    let hash = 2166136261;
+    for (let i = 0; i < code.length; i++) {
+      hash ^= code.charCodeAt(i);
+      hash = Math.imul(hash, 16777619);
+    }
+
+    for (let r = 0; r < size; r++) {
+      for (let c = 0; c < size; c++) {
+        const inFinder = (r < 8 && c < 8) || (r < 8 && c >= size - 8) || (r >= size - 8 && c < 8);
+        if (inFinder) continue;
+        hash ^= (r * 31 + c * 17);
+        hash = Math.imul(hash, 16777619);
+        if ((Math.abs(hash) % 10) < 5) {
+          ctx.fillRect(c * cell, r * cell, Math.ceil(cell), Math.ceil(cell));
+        }
+      }
+    }
   },
 
   openVerifyModal(prefillCode = "") {
@@ -1456,12 +1718,13 @@ const app = {
           <span style="font-size:12.5px; color:#166534; font-weight:700;">${cert.certId}</span>
         </div>
         <table style="width:100%; font-size:13px; border-collapse:collapse;">
-          <tr><td style="padding:4px 0; color:#475569;">Học sinh:</td><td style="font-weight:700;">${cert.studentName} (${cert.userId})</td></tr>
-          <tr><td style="padding:4px 0; color:#475569;">Lớp và Khối:</td><td style="font-weight:700;">Lớp ${cert.className} (Khối ${cert.grade})</td></tr>
-          <tr><td style="padding:4px 0; color:#475569;">Khóa học hoàn thành:</td><td style="font-weight:700; color:#0f2757;">${cert.courseTitle}</td></tr>
-          <tr><td style="padding:4px 0; color:#475569;">Kết quả đánh giá:</td><td style="font-weight:700; color:#15803d;">${cert.score}/100 điểm - ${cert.classification}</td></tr>
-          <tr><td style="padding:4px 0; color:#475569;">Ngày cấp:</td><td>${cert.issuedDate} - ${cert.schoolName}</td></tr>
-          <tr><td style="padding:4px 0; color:#475569;">Tổ trưởng chuyên môn:</td><td style="font-weight:700;">Thầy Nguyễn Hải Nam</td></tr>
+          <tr><td style="padding:4px 0; color:#475569;">Đoàn viên / Học sinh:</td><td style="font-weight:700;">${cert.studentName} (${cert.userId})</td></tr>
+          <tr><td style="padding:4px 0; color:#475569;">Chi đoàn Lớp:</td><td style="font-weight:700;">Lớp ${cert.className} (Khối ${cert.grade})</td></tr>
+          <tr><td style="padding:4px 0; color:#475569;">Khóa bồi dưỡng:</td><td style="font-weight:700; color:#0f2757;">${cert.courseTitle}</td></tr>
+          <tr><td style="padding:4px 0; color:#475569;">Kết quả kiểm tra:</td><td style="font-weight:700; color:#15803d;">${cert.score}/100 điểm - ${cert.classification}</td></tr>
+          <tr><td style="padding:4px 0; color:#475569;">Ngày cấp văn bằng:</td><td>${cert.issuedDate}</td></tr>
+          <tr><td style="padding:4px 0; color:#475569;">Đơn vị chứng nhận:</td><td style="font-weight:700; color:#15803d;">${cert.schoolName || "ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ"}</td></tr>
+          <tr><td style="padding:4px 0; color:#475569;">Người ký duyệt:</td><td style="font-weight:700;">TM. BAN CHẤP HÀNH ĐOÀN TRƯỜNG - ${cert.signerTitle || "PHÓ BÍ THƯ ĐOÀN TRƯỜNG"}: ${cert.signerName || "Phạm Hiệp Lâm"}</td></tr>
         </table>
       </div>
     `;
@@ -1529,7 +1792,7 @@ const app = {
             <span class="badge badge-info" style="margin-bottom:4px;">HỌC BẠ ĐIỆN TỬ NỘI BỘ</span>
             <h2 style="font-size:18px; color:#0f2757; margin:0;">BẢNG TỔNG KẾT ĐÁNH GIÁ QUÁ TRÌNH HỌC TẬP MÔN TIẾNG ANH</h2>
             <p style="font-size:13px; color:#64748b; margin-top:3px;">
-              Học sinh: <strong>${student.fullName}</strong> | Mã số: <strong>${student.id}</strong> | Lớp: <strong>${student.className}</strong> | Niên khóa: <strong>2025 - 2026</strong>
+              Học sinh: <strong>${student.fullName}</strong> | Mã số: <strong>${student.id}</strong> | Lớp: <strong>${student.className}</strong> | Niên khóa: <strong>${this.state.schoolConfig?.academicYear || '2026 - 2027'}</strong>
             </p>
           </div>
           <div style="text-align:right;">
@@ -1667,10 +1930,39 @@ const app = {
     `;
   },
 
-  renderAdminStudents() {
-    const students = this.state.users.filter(u => u.role === "student");
+  setAdminStudentsSearch(query) {
+    this.adminStudentsSearchQuery = (query || "").trim();
+    this.adminStudentsCurrentPage = 1;
+    this.renderMain();
+  },
 
-    const rowsHtml = students.map(s => {
+  setAdminStudentsPage(page) {
+    this.adminStudentsCurrentPage = page;
+    this.renderMain();
+  },
+
+  renderAdminStudents() {
+    const allStudents = this.state.users.filter(u => u.role === "student");
+    const q = (this.adminStudentsSearchQuery || "").toLowerCase();
+
+    const filtered = allStudents.filter(s => {
+      if (!q) return true;
+      return (
+        s.id.toLowerCase().includes(q) ||
+        s.fullName.toLowerCase().includes(q) ||
+        (s.className && s.className.toLowerCase().includes(q))
+      );
+    });
+
+    const pageSize = this.adminStudentsPageSize || 20;
+    const totalPages = Math.ceil(filtered.length / pageSize) || 1;
+    if (this.adminStudentsCurrentPage > totalPages) this.adminStudentsCurrentPage = totalPages;
+    if (this.adminStudentsCurrentPage < 1) this.adminStudentsCurrentPage = 1;
+
+    const startIdx = (this.adminStudentsCurrentPage - 1) * pageSize;
+    const pagedStudents = filtered.slice(startIdx, startIdx + pageSize);
+
+    const rowsHtml = pagedStudents.map(s => {
       const prog = this.getUserProgress(s.id);
       const certsCount = this.state.certificates.filter(c => c.userId === s.id).length;
       return `
@@ -1695,13 +1987,31 @@ const app = {
     return `
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
         <div>
-          <h2 style="font-size:18px; font-weight:700; color:#0f2757;">Quản lý danh sách học sinh (${students.length} học sinh)</h2>
-          <p style="font-size:13px; color:#64748b;">Chỉ học sinh có tên trong danh sách lớp mới có quyền đăng nhập vào hệ thống.</p>
+          <h2 style="font-size:18px; font-weight:700; color:#0f2757;">Quản lý danh sách đoàn viên, học sinh (${allStudents.length} học sinh)</h2>
+          <p style="font-size:13px; color:#64748b;">Học sinh có tên trong danh sách đoàn trường mới có quyền đăng nhập và nhận giấy chứng nhận.</p>
         </div>
         <div style="display:flex; gap:8px;">
           <button class="btn btn-outline btn-sm" onclick="app.openBulkImportModal()">Nhập danh sách theo lớp</button>
           <button class="btn btn-primary btn-sm" onclick="app.openAddStudentModal()">Thêm học sinh mới</button>
         </div>
+      </div>
+
+      <div style="margin-bottom:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; background-color:#ffffff; padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
+        <span style="font-size:13.5px; font-weight:600; color:#334155;">🔍 Tìm kiếm học sinh:</span>
+        <input 
+          type="text" 
+          id="admin-student-search-input"
+          placeholder="Nhập Mã số (HS...), Họ tên hoặc Lớp (10C1, 11A...)" 
+          value="${this.adminStudentsSearchQuery || ''}" 
+          style="padding:6px 12px; font-size:13.5px; border:1px solid #cbd5e1; border-radius:var(--radius-sm); width:320px; max-width:100%;"
+          oninput="app.setAdminStudentsSearch(this.value)"
+        />
+        ${this.adminStudentsSearchQuery ? `
+          <button class="btn btn-ghost btn-sm" onclick="app.setAdminStudentsSearch('')">Xóa tìm kiếm</button>
+        ` : ''}
+        <span style="font-size:13px; color:#64748b; margin-left:auto;">
+          Hiển thị <strong>${filtered.length}</strong> / <strong>${allStudents.length}</strong> học sinh
+        </span>
       </div>
 
       <div class="data-table-wrap">
@@ -1718,10 +2028,27 @@ const app = {
             </tr>
           </thead>
           <tbody>
-            ${rowsHtml}
+            ${rowsHtml || `<tr><td colspan="7" style="text-align:center; padding:24px; color:#64748b;">Không tìm thấy học sinh nào khớp với từ khóa "${this.adminStudentsSearchQuery}".</td></tr>`}
           </tbody>
         </table>
       </div>
+
+      <!-- Thanh phan trang -->
+      ${totalPages > 1 ? `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; flex-wrap:wrap; gap:10px;">
+          <div style="font-size:13px; color:#64748b;">
+            Trang <strong>${this.adminStudentsCurrentPage}</strong> / <strong>${totalPages}</strong> (Mỗi trang ${pageSize} học sinh)
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn btn-outline btn-sm" ${this.adminStudentsCurrentPage <= 1 ? 'disabled style="opacity:0.5;"' : ''} onclick="app.setAdminStudentsPage(${this.adminStudentsCurrentPage - 1})">
+              ← Trang trước
+            </button>
+            <button class="btn btn-outline btn-sm" ${this.adminStudentsCurrentPage >= totalPages ? 'disabled style="opacity:0.5;"' : ''} onclick="app.setAdminStudentsPage(${this.adminStudentsCurrentPage + 1})">
+              Trang sau →
+            </button>
+          </div>
+        </div>
+      ` : ''}
     `;
   },
 
@@ -1889,10 +2216,6 @@ const app = {
     this.state.users = this.state.users.filter(u => u.id !== userId);
     await this.saveState();
     this.renderMain();
-  },
-
-  closeGenericModal() {
-    document.getElementById("modal-generic").classList.add("hidden");
   },
 
   renderAdminCourses() {
@@ -2188,27 +2511,27 @@ const app = {
     return `
       <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; align-items:start;">
         <div class="auth-card" style="padding:22px;">
-          <h3 style="font-size:17px; margin-bottom:12px; color:#0f2757;">Cấu hình thông tin nhà trường và phôi bằng</h3>
+          <h3 style="font-size:17px; margin-bottom:12px; color:#0f2757;">Cấu hình thông tin Đoàn trường & Phôi chứng nhận</h3>
           <form onsubmit="app.saveSchoolSettings(event)">
             <div class="form-group">
-              <label>Tên đơn vị trường học</label>
-              <input type="text" id="cfg-school-name" class="form-control" value="${cfg.schoolName}" required />
+              <label>Tên đơn vị chủ quản</label>
+              <input type="text" id="cfg-school-name" class="form-control" value="${cfg.schoolName || 'ĐOÀN TRƯỜNG THPT SỐ 2 NGUYỄN TRƯỜNG TỘ'}" required />
             </div>
             <div class="form-group">
               <label>Tiêu đề hệ thống</label>
-              <input type="text" id="cfg-school-sub" class="form-control" value="${cfg.schoolSubtitle}" required />
+              <input type="text" id="cfg-school-sub" class="form-control" value="${cfg.schoolSubtitle || 'HỆ THỐNG HỌC TẬP TRỰC TUYẾN VÀ CẤP CHỨNG CHỈ MÔN TIẾNG ANH'}" required />
             </div>
             <div class="form-group">
-              <label>Họ tên Hiệu trưởng ký duyệt</label>
-              <input type="text" id="cfg-principal" class="form-control" value="${cfg.principalName}" required />
+              <label>Chức danh người ký duyệt chứng chỉ</label>
+              <input type="text" id="cfg-signer-title" class="form-control" value="${cfg.signerTitle || 'PHÓ BÍ THƯ ĐOÀN TRƯỜNG'}" required />
             </div>
             <div class="form-group">
-              <label>Tổ trưởng chuyên môn Ngoại ngữ</label>
-              <input type="text" id="cfg-head-teacher" class="form-control" value="${cfg.headTeacherName}" required />
+              <label>Họ và tên người ký duyệt</label>
+              <input type="text" id="cfg-signer-name" class="form-control" value="${cfg.signerName || 'Phạm Hiệp Lâm'}" required />
             </div>
             <div class="form-group">
               <label>Điểm chuẩn đạt chứng chỉ (%)</label>
-              <input type="number" id="cfg-pass-score" class="form-control" min="50" max="100" value="${cfg.passScorePercent}" required />
+              <input type="number" id="cfg-pass-score" class="form-control" min="50" max="100" value="${cfg.passScorePercent || 70}" required />
             </div>
             <div style="display:flex; gap:8px; margin-top:14px;">
               <button type="submit" class="btn btn-primary btn-sm">Lưu cấu hình</button>
@@ -2218,9 +2541,9 @@ const app = {
         </div>
 
         <div class="auth-card" style="padding:22px; background-color:#f8fafc;">
-          <h3 style="font-size:17px; color:#0f2757; margin-bottom:10px;">Hướng dẫn triển khai nội bộ trường học</h3>
+          <h3 style="font-size:17px; color:#0f2757; margin-bottom:10px;">Hướng dẫn triển khai Đoàn trường học</h3>
           <p style="font-size:13.5px; color:#334155; margin-bottom:12px; line-height:1.5;">
-            Hệ thống áp dụng phương thức cấp tài khoản theo danh sách lớp để đảm bảo an toàn thông tin nội bộ.
+            Hệ thống cấp chứng chỉ tiếng Anh nội bộ do Đoàn trường THPT Số 2 Nguyễn Trường Tộ chủ trì, cấp tài khoản đồng bộ theo danh sách lớp cho học sinh toàn trường.
           </p>
 
           <div style="background-color:#ffffff; border:1px solid #cbd5e1; padding:12px; border-radius:var(--radius-sm); margin-bottom:12px;">
@@ -2248,13 +2571,14 @@ const app = {
     e.preventDefault();
     this.state.schoolConfig.schoolName = document.getElementById("cfg-school-name").value.trim();
     this.state.schoolConfig.schoolSubtitle = document.getElementById("cfg-school-sub").value.trim();
-    this.state.schoolConfig.principalName = document.getElementById("cfg-principal").value.trim();
-    this.state.schoolConfig.headTeacherName = document.getElementById("cfg-head-teacher").value.trim();
+    this.state.schoolConfig.signerTitle = document.getElementById("cfg-signer-title").value.trim();
+    this.state.schoolConfig.signerName = document.getElementById("cfg-signer-name").value.trim();
     this.state.schoolConfig.passScorePercent = parseInt(document.getElementById("cfg-pass-score").value, 10) || 70;
+    this.state.schoolConfig.customized = true;
 
     await this.saveState();
     this.updateHeaderBranding();
-    alert("Đã lưu cấu hình thông tin nhà trường thành công.");
+    alert("Đã lưu cấu hình thông tin Đoàn trường và phôi chứng chỉ thành công.");
   },
 
   async resetDefaultData() {
@@ -2373,7 +2697,7 @@ const app = {
     message += `Khóa học hiện tại của bạn là "${course.title}" (Khối ${course.grade} - ${course.level}). Về tiến độ, bạn đã hoàn thành ${doneL}/${totalL} bài học chính.\n\n`;
 
     if (cert) {
-      message += `Về chứng chỉ: Bạn đã được cấp Giấy chứng nhận hoàn thành khóa học chính thức với số điểm ${cert.score}/100, xếp loại ${cert.classification} (Mã chứng chỉ: ${cert.certId}). Bạn có thể chuyển sang mục "Chứng chỉ đã cấp" để in văn bằng có chữ ký của Thầy Hiệu trưởng Trương Quang Mẫn và Thầy Tổ trưởng Nguyễn Hải Nam.`;
+      message += `Về chứng chỉ: Bạn đã được cấp Giấy chứng nhận hoàn thành khóa học chính thức với số điểm ${cert.score}/100, xếp loại ${cert.classification} (Mã chứng chỉ: ${cert.certId}). Bạn có thể chuyển sang mục "Chứng chỉ đã cấp" để xem và in văn bằng do Đoàn trường THPT Số 2 Nguyễn Trường Tộ cấp.`;
     } else if (examAttempt && !examAttempt.passed) {
       message += `Về kỳ thi cuối khóa: Bạn đã tham gia kỳ thi và đạt ${examAttempt.score}/100 điểm. Theo quy chế khảo thí nội bộ, mỗi học sinh chỉ làm bài 01 lần duy nhất, kết quả đã được niêm phong vào học bạ điện tử. Bạn hãy tiếp tục trau dồi các điểm ngữ pháp để nâng cao năng lực nhé.`;
     } else if (doneL === totalL) {
@@ -2529,7 +2853,7 @@ const app = {
 
     // 8. Dieu kien cap chung chi va lanh dao truong
     if (q.includes("chứng chỉ") || q.includes("điều kiện") || q.includes("xác thực") || q.includes("hiệu trưởng") || q.includes("trương quang mẫn") || q.includes("nguyễn hải nam")) {
-      return `Chào bạn! Về quy định cấp chứng chỉ Tiếng Anh nội bộ của Trường THPT Số 2 Nguyễn Trường Tộ:\n\n1. Tiêu chuẩn công nhận: Học sinh cần hoàn thành các bài học và đạt điểm bài kiểm tra cuối khóa từ ${this.state.schoolConfig.passScorePercent}% trở lên.\n\n2. Xếp loại tốt nghiệp:\n- Xuất sắc (Distinction): Đạt từ 85% đến 100% điểm thi.\n- Giỏi (Merit): Đạt từ 75% đến 84% điểm thi.\n- Đạt (Pass): Đạt từ 70% đến 74% điểm thi.\n\n3. Tính pháp lý và chữ ký: Giấy chứng nhận được ký duyệt điện tử bởi Thầy Hiệu trưởng Trương Quang Mẫn và Thầy Tổ trưởng Chuyên môn Nguyễn Hải Nam. Mỗi văn bằng đều có Mã định danh (Certificate ID) và mã QR để tra cứu trực tuyến trên cổng đối soát của trường.`;
+      return `Chào bạn! Về quy định cấp chứng chỉ Tiếng Anh nội bộ của Trường THPT Số 2 Nguyễn Trường Tộ:\n\n1. Tiêu chuẩn công nhận: Học sinh cần hoàn thành các bài học và đạt điểm bài kiểm tra cuối khóa từ ${this.state.schoolConfig.passScorePercent}% trở lên.\n\n2. Xếp loại tốt nghiệp:\n- Xuất sắc (Distinction): Đạt từ 85% đến 100% điểm thi.\n- Giỏi (Merit): Đạt từ 75% đến 84% điểm thi.\n- Đạt (Pass): Đạt từ 70% đến 74% điểm thi.\n\n3. Tính pháp lý và chữ ký: Giấy chứng nhận được ký duyệt điện tử và xác thực bởi Ban Chấp Hành Đoàn Trường THPT Số 2 Nguyễn Trường Tộ. Mỗi văn bằng đều có Mã định danh (Certificate ID) và mã QR chuẩn quốc tế để tra cứu trực tuyến trên cổng đối soát của Đoàn trường.`;
     }
 
     // 9. Ky nang luyen nghe tieng Anh
@@ -2542,12 +2866,15 @@ const app = {
       return `Chào bạn! Trong chương trình Tiếng Anh mới của trường, các từ vựng đều gắn liền với đời sống thực tế và xuất hiện trực tiếp trong bài thi:\n\n- Breadwinner (noun): Người trụ cột kinh tế trong gia đình.\n- Homemaker (noun): Người làm nội trợ, chăm sóc tổ ấm.\n- Carbon footprint (noun): Dấu chân carbon (lượng phát thải khí nhà kính cá nhân).\n- Sustainable (adjective): Bền vững, thân thiện với hệ sinh thái lâu dài.\n- Antibiotics (noun): Thuốc kháng sinh điều trị nhiễm khuẩn.\n- Perseverance (noun): Lòng kiên trì, sự bền bỉ theo đuổi mục tiêu học tập.\n\nTrong mỗi bài học, bạn có thể bấm nút "Phát âm US" hoặc "Phát âm UK" để nghe giọng chuẩn bản xứ và rèn luyện kỹ năng nói chuẩn xác nhé!`;
     }
 
-    // 11. Tra loi tu nhien than thien mac dinh
-    return `Chào bạn nhé! Tôi rất vui được hỗ trợ bạn trong quá trình học tập môn Tiếng Anh tại Trường THPT Số 2 Nguyễn Trường Tộ.\n\nVề nội dung "${this.escapeHtml(query)}" mà bạn vừa hỏi, bạn có thể xem lại chi tiết bài giảng trong phòng học của khối mình, hoặc hỏi tôi cụ thể hơn về một điểm ngữ pháp nào đó (ví dụ như: câu bị động, các thì hiện tại/quá khứ, động từ khuyết thiếu, mệnh đề quan hệ...), luyện kỹ năng nghe hay quy chế thi cử toàn màn hình của trường. Tôi luôn sẵn sàng giải đáp kỹ lưỡng cho bạn!`;
+    // 11. Hoc lieu so va Sach giao khoa Hoclieu.vn (NXB Giao Duc Viet Nam)
+    if (q.includes("học liệu") || q.includes("hoclieu") || q.includes("sách giáo khoa") || q.includes("sgk") || q.includes("sách") || q.includes("sách bài tập")) {
+      return `Chào bạn! Hệ thống học liệu số và sách giáo khoa điện tử Tiếng Anh Global Success chính thức của Nhà xuất bản Giáo dục Việt Nam (Bộ GD&ĐT) đã được tích hợp đầy đủ vào hệ thống trường mình:\n\n1. Tiếng Anh Lớp 10: https://hoclieu.vn/book/0ec1a2f7-a4a2-4441-a84b-5f4845ac5c8b\n2. Tiếng Anh Lớp 11: https://hoclieu.vn/book/76e85ac1-83b1-48b4-9b04-a1dfee610bd7\n3. Tiếng Anh Lớp 12: https://hoclieu.vn/book/e7ed2390-c936-4306-89e3-e26e84b3450a\n\nBạn có thể vào phòng học môn Tiếng Anh và chuyển sang tab "5. SGK & Học liệu số Hoclieu.vn" để xem sách tương tác trực tiếp ngay trên hệ thống, nghe phát âm audio chuẩn và làm bài tập trắc nghiệm bổ trợ nhé!`;
+    }
+
+    // 12. Tra loi tu nhien than thien mac dinh
+    return `Chào bạn nhé! Tôi rất vui được hỗ trợ bạn trong quá trình học tập môn Tiếng Anh tại Trường THPT Số 2 Nguyễn Trường Tộ.\n\nVề nội dung "${this.escapeHtml(query)}" mà bạn vừa hỏi, bạn có thể xem lại chi tiết bài giảng trong phòng học của khối mình, mở mục "SGK & Học liệu số Hoclieu.vn" để đọc sách giáo khoa điện tử, hoặc hỏi tôi cụ thể hơn về một điểm ngữ pháp nào đó (ví dụ như: câu bị động, các thì hiện tại/quá khứ, động từ khuyết thiếu, mệnh đề quan hệ...), luyện kỹ năng nghe hay quy chế thi cử toàn màn hình của trường. Tôi luôn sẵn sàng giải đáp kỹ lưỡng cho bạn!`;
   }
 };
-
-window.addEventListener("DOMContentLoaded", () => app.init());
 
 window.addEventListener("DOMContentLoaded", () => app.init());
 

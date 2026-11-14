@@ -1,0 +1,2646 @@
+[
+  {
+    "id": "ENG-G10-U1",
+    "title": "Tiếng Anh Lớp 10: Family Life, Environment, Music & Inventions",
+    "grade": "10",
+    "level": "Pre-Intermediate (A2-B1)",
+    "duration": "24 tiết",
+    "teacher": "Thầy Nguyễn Hải Nam",
+    "description": "Chương trình GDPT mới lớp 10 bám sát SGK Global Success: Ngữ pháp toàn diện (Present Simple/Continuous, Passive Voice, Gerunds & Infinitives, Past tenses, Passive Modals), 4 kỹ năng và đề thi chuẩn 20 câu.",
+    "badgeColor": "#1e3a8a",
+    "examDurationMinutes": 20,
+    "hoclieuUrl": "https://hoclieu.vn/book/0ec1a2f7-a4a2-4441-a84b-5f4845ac5c8b",
+    "hoclieuTitle": "Học Liệu Số & Sách Giáo Khoa Tiếng Anh 10 - Global Success",
+    "lessons": [
+      {
+        "id": "L10-1",
+        "title": "Unit 1: Family Life - Chia sẻ công việc gia đình",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Present Simple vs. Present Continuous</h4>\n            <p>Học sinh cần phân biệt rõ cách dùng Thì hiện tại đơn (thói quen, lịch trình, chân lý) và Thì hiện tại tiếp diễn (hành động đang diễn ra tại thời điểm nói hoặc xu hướng tạm thời).</p>\n            <div class=\"grammar-box\">\n              <p><strong>Present Simple (Hiện tại đơn):</strong> <code>S + V(s/es) + O</code></p>\n              <ul>\n                <li>Diễn tả thói quen lặp đi lặp lại: <em>My mother <strong>does</strong> the cooking every day.</em></li>\n                <li>Dấu hiệu nhận biết: <em>always, usually, often, every day, twice a week, on Mondays...</em></li>\n              </ul>\n              <hr/>\n              <p><strong>Present Continuous (Hiện tại tiếp diễn):</strong> <code>S + am/is/are + V-ing</code></p>\n              <ul>\n                <li>Diễn tả hành động đang xảy ra: <em>Look! My father <strong>is watering</strong> the plants in the garden.</em></li>\n                <li>Dấu hiệu nhận biết: <em>now, right now, at the moment, at present, Look!, Listen!, Be quiet!...</em></li>\n              </ul>\n              <p class=\"note-warn\"><strong>Lưu ý quan trọng:</strong> Các động từ chỉ trạng thái (stative verbs) như <em>know, believe, like, love, want, belong, need, remember</em> thông thường <strong>không</strong> chia ở thì tiếp diễn.</p>\n            </div>\n            <h4>2. Collocations & Idioms chủ đề Household Chores</h4>\n            <ul>\n              <li><strong>do</strong> the cooking / the laundry / the washing-up / the heavy lifting / the grocery shopping</li>\n              <li><strong>take out</strong> the rubbish (đổ rác)</li>\n              <li><strong>lay</strong> the table (dọn bàn ăn) / <strong>clear</strong> the table (dọn dẹp sau bữa ăn)</li>\n              <li><strong>breadwinner</strong> (n): người trụ cột kiếm tiền nuôi cả gia đình</li>\n              <li><strong>homemaker</strong> (n): người tề gia nội trợ, chăm sóc gia đình</li>\n              <li><strong>split / divide</strong> chores equally: phân chia công việc nhà đồng đều</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "breadwinner",
+            "phonetic": "/ˈbredwɪnə(r)/",
+            "pos": "noun",
+            "meaning": "Người trụ cột gia đình (thu nhập chính)",
+            "example": "In my family, both my parents are breadwinners."
+          },
+          {
+            "word": "homemaker",
+            "phonetic": "/ˈhəʊmmeɪkə(r)/",
+            "pos": "noun",
+            "meaning": "Người nội trợ",
+            "example": "Being a homemaker requires exceptional time management skills."
+          },
+          {
+            "word": "heavy lifting",
+            "phonetic": "/ˌhevi ˈlɪftɪŋ/",
+            "pos": "noun",
+            "meaning": "Công việc mang vác nặng nhọc",
+            "example": "My elder brother usually does the heavy lifting around the house."
+          },
+          {
+            "word": "groceries",
+            "phonetic": "/ˈɡrəʊsəriz/",
+            "pos": "noun",
+            "meaning": "Thực phẩm và hàng tiêu dùng thiết yếu",
+            "example": "She shops for groceries at the local supermarket twice a week."
+          },
+          {
+            "word": "gratitude",
+            "phonetic": "/ˈɡrætɪtjuːd/",
+            "pos": "noun",
+            "meaning": "Lòng biết ơn",
+            "example": "Sharing household chores helps children show gratitude to their parents."
+          },
+          {
+            "word": "bond",
+            "phonetic": "/bɒnd/",
+            "pos": "noun/verb",
+            "meaning": "Sự gắn kết tình cảm, thắt chặt quan hệ",
+            "example": "Doing chores together strengthens family bonds."
+          }
+        ],
+        "listening": {
+          "title": "Family Talk: Sharing Household Chores",
+          "context": "Nghe đoạn đối thoại giữa hai học sinh Nam và Lan về việc phân chia công việc trong gia đình.",
+          "lines": [
+            {
+              "speaker": "Lan",
+              "text": "Hi Nam! You look busy. Where are you going?"
+            },
+            {
+              "speaker": "Nam",
+              "text": "Hi Lan! I am going to the supermarket to buy some groceries for dinner. My mom is working late today."
+            },
+            {
+              "speaker": "Lan",
+              "text": "That is great! Do you often help your parents with the housework?"
+            },
+            {
+              "speaker": "Nam",
+              "text": "Yes, we split the chores equally in my family. I take out the rubbish and do the washing-up every evening."
+            },
+            {
+              "speaker": "Lan",
+              "text": "What about your sister?"
+            },
+            {
+              "speaker": "Nam",
+              "text": "She does the laundry and cleans the living room. My dad does the heavy lifting and fixes broken appliances."
+            }
+          ],
+          "checkQuestion": {
+            "question": "According to the conversation, what chore does Nam do every evening?",
+            "options": [
+              "Do the laundry and clean the living room",
+              "Take out the rubbish and do the washing-up",
+              "Fix appliances and do the heavy lifting",
+              "Stay at the office with his mother"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "Listen! Someone _______ the piano in the music room.",
+            "options": [
+              "plays",
+              "is playing",
+              "played",
+              "are playing"
+            ],
+            "correctIndex": 1,
+            "explanation": "The imperative exclamation 'Listen!' indicates an action occurring right at the moment of speaking; therefore, use the Present Continuous tense ('is playing')."
+          },
+          {
+            "question": "My brother usually _______ out the rubbish every morning before going to school.",
+            "options": [
+              "takes",
+              "does",
+              "makes",
+              "puts"
+            ],
+            "correctIndex": 0,
+            "explanation": "The standard English collocation is 'take out the rubbish' (to empty the garbage)."
+          },
+          {
+            "question": "A _______ is a person who manages a home and often raises children instead of earning money from a job.",
+            "options": [
+              "breadwinner",
+              "homemaker",
+              "grocer",
+              "supporter"
+            ],
+            "correctIndex": 1,
+            "explanation": "'Homemaker' refers to a person who manages the household and domestic duties full-time."
+          },
+          {
+            "question": "Doing household chores together gives family members a chance to strengthen their _______.",
+            "options": [
+              "bonds",
+              "appliances",
+              "groceries",
+              "lifts"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Family bonds' refers to the close emotional connections between family members."
+          }
+        ]
+      },
+      {
+        "id": "L10-2",
+        "title": "Unit 2: Humans and The Environment - Lối sống xanh",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Câu bị động (The Passive Voice)</h4>\n            <p>Câu bị động được sử dụng nhằm nhấn mạnh đối tượng tiếp nhận hành động hơn là đối tượng thực hiện hành động.</p>\n            <div class=\"grammar-box\">\n              <p><strong>Cấu trúc tổng quát:</strong> <code>S + be + V3/ed (+ by O)</code></p>\n              <ul>\n                <li><strong>Hiện tại đơn:</strong> <code>am/is/are + V3/ed</code><br/><em>Ví dụ: More trees <strong>are planted</strong> in our school yard every spring.</em></li>\n                <li><strong>Quá khứ đơn:</strong> <code>was/were + V3/ed</code><br/><em>Ví dụ: The school clean-up campaign <strong>was organized</strong> last Sunday.</em></li>\n                <li><strong>Động từ khuyết thiếu:</strong> <code>will / can / should / must + be + V3/ed</code><br/><em>Ví dụ: Single-use plastics <strong>should be banned</strong> in educational institutions.</em></li>\n              </ul>\n            </div>\n            <h4>2. Phân biệt Will và Be going to</h4>\n            <ul>\n              <li><strong>Will + V:</strong> Quyết định đưa ra tức thời ngay tại thời điểm nói hoặc dự đoán không có căn cứ cụ thể.</li>\n              <li><strong>Be going to + V:</strong> Kế hoạch, dự định đã có từ trước hoặc dự đoán có bằng chứng cụ thể trước mắt.</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "carbon footprint",
+            "phonetic": "/ˌkɑːbən ˈfʊtprɪnt/",
+            "pos": "noun",
+            "meaning": "Dấu chân carbon (lượng khí thải nhà kính cá nhân tạo ra)",
+            "example": "Riding a bike to school helps reduce our carbon footprint."
+          },
+          {
+            "word": "eco-friendly",
+            "phonetic": "/ˌiːkəʊ ˈfrendli/",
+            "pos": "adj",
+            "meaning": "Thân thiện với môi trường sinh thái",
+            "example": "Our school canteen now uses eco-friendly paper packaging."
+          },
+          {
+            "word": "sustainable",
+            "phonetic": "/səˈsteɪnəb(ə)l/",
+            "pos": "adj",
+            "meaning": "Bền vững, không gây cạn kiệt tài nguyên",
+            "example": "We need to adopt a more sustainable lifestyle to protect our planet."
+          },
+          {
+            "word": "organic",
+            "phonetic": "/ɔːˈɡænɪk/",
+            "pos": "adj",
+            "meaning": "Hữu cơ (không dùng phân bón/hóa chất hóa học)",
+            "example": "Buying organic food supports biodiversity and human health."
+          },
+          {
+            "word": "electrical appliances",
+            "phonetic": "/ɪˈlektrɪkl əˈplaɪənsɪz/",
+            "pos": "noun",
+            "meaning": "Các thiết bị dùng điện gia dụng",
+            "example": "Remember to switch off all electrical appliances before leaving the classroom."
+          }
+        ],
+        "listening": {
+          "title": "Green School Club Announcement",
+          "context": "Nghe thông báo hoạt động từ Câu lạc bộ Môi trường trường THPT Số 2 Nguyễn Trường Tộ.",
+          "lines": [
+            {
+              "speaker": "Club Leader",
+              "text": "Good morning everyone! Welcome to our school's Go Green Club weekly meeting."
+            },
+            {
+              "speaker": "Student",
+              "text": "What green activities are we going to organize this Saturday?"
+            },
+            {
+              "speaker": "Club Leader",
+              "text": "First, over one hundred young trees will be planted around the school sports field."
+            },
+            {
+              "speaker": "Student",
+              "text": "Awesome! What about the plastic recycling campaign?"
+            },
+            {
+              "speaker": "Club Leader",
+              "text": "Plastic bottles and scrap paper will be collected from every classroom at 9:00 AM."
+            }
+          ],
+          "checkQuestion": {
+            "question": "Which activity will be organized in the school yard this Saturday?",
+            "options": [
+              "Incinerating collected plastic waste",
+              "Planting more than 100 young trees",
+              "Painting classroom walls",
+              "Hosting an inter-school sports match"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "Thousands of plastic bottles _______ around the world every minute.",
+            "options": [
+              "throw away",
+              "are thrown away",
+              "is thrown away",
+              "threw away"
+            ],
+            "correctIndex": 1,
+            "explanation": "The plural subject 'Thousands of plastic bottles' is passive in the present tense: 'are + V3/ed' ('are thrown away')."
+          },
+          {
+            "question": "Look at those dark clouds! It _______ rain soon.",
+            "options": [
+              "will",
+              "is going to",
+              "shall",
+              "is"
+            ],
+            "correctIndex": 1,
+            "explanation": "Predicting an event based on immediate present visual evidence ('Look at those dark clouds!') requires 'be going to'."
+          },
+          {
+            "question": "Turning off unused lights is a simple way to reduce your _______.",
+            "options": [
+              "carbon footprint",
+              "household chore",
+              "heavy lifting",
+              "breadwinner"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Carbon footprint' denotes the total greenhouse gas emissions caused by an individual or organization."
+          }
+        ]
+      },
+      {
+        "id": "L10-3",
+        "title": "Unit 3: Music - Nghệ thuật và Âm nhạc",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Danh động từ (Gerunds) và Động từ nguyên mẫu (To-infinitives)</h4>\n            <p>Sau các động từ nhất định trong tiếng Anh, chúng ta sử dụng V-ing (Gerund) hoặc To-V (To-infinitive):</p>\n            <div class=\"grammar-box\">\n              <p><strong>1. Động từ theo sau bởi To-infinitive (To + V):</strong></p>\n              <ul>\n                <li><em>decide, want, hope, plan, agree, promise, refuse, afford, tend, choose...</em></li>\n                <li>Ví dụ: <em>She decided <strong>to enter</strong> the national music talent show.</em></li>\n              </ul>\n              <hr/>\n              <p><strong>2. Động từ theo sau bởi Gerund (V-ing):</strong></p>\n              <ul>\n                <li><em>enjoy, avoid, mind, practice, suggest, admit, consider, spend (time), keep...</em></li>\n                <li>Ví dụ: <em>He enjoys <strong>listening</strong> to Vietnamese traditional folk music (Quan Họ).</em></li>\n              </ul>\n              <hr/>\n              <p><strong>3. Động từ có sự biến đổi nghĩa (Remember, Forget, Stop, Regret):</strong></p>\n              <ul>\n                <li><code>Remember / Forget + to-V</code>: Nhớ / Quên phải làm gì trong tương lai hoặc bổn phận.</li>\n                <li><code>Remember / Forget + V-ing</code>: Nhớ / Quên kỷ niệm đã làm điều gì trong quá khứ.</li>\n                <li><code>Stop + to-V</code>: Dừng lại để làm việc khác; <code>Stop + V-ing</code>: Dừng hẳn việc đang làm.</li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng trọng tâm chủ đề Music</h4>\n            <ul>\n              <li><strong>phenomenon</strong> (n): hiện tượng (số nhiều: <em>phenomena</em>)</li>\n              <li><strong>audition</strong> (n/v): buổi thử giọng, thử vai</li>\n              <li><strong>composer</strong> (n): nhà soạn nhạc, nhạc sĩ sáng tác</li>\n              <li><strong>release</strong> (v/n): phát hành album/đĩa nhạc mới ra công chúng</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "phenomenon",
+            "phonetic": "/fəˈnɒmɪnən/",
+            "pos": "noun",
+            "meaning": "Hiện tượng đặc biệt, kỳ tài",
+            "example": "The young pianist became an international music phenomenon."
+          },
+          {
+            "word": "composer",
+            "phonetic": "/kəmˈpəʊzə(r)/",
+            "pos": "noun",
+            "meaning": "Nhạc sĩ sáng tác ca khúc, nhà soạn nhạc",
+            "example": "Van Cao was a prominent Vietnamese musical composer."
+          },
+          {
+            "word": "audition",
+            "phonetic": "/ɔːˈdɪʃn/",
+            "pos": "noun",
+            "meaning": "Buổi thử giọng, thi tuyển năng khiếu",
+            "example": "More than 500 candidates attended the singing audition."
+          },
+          {
+            "word": "release",
+            "phonetic": "/rɪˈliːs/",
+            "pos": "verb",
+            "meaning": "Phát hành sản phẩm âm nhạc ra công chúng",
+            "example": "The band will release their debut album next Friday."
+          },
+          {
+            "word": "instrument",
+            "phonetic": "/ˈɪnstrəmənt/",
+            "pos": "noun",
+            "meaning": "Nhạc cụ",
+            "example": "Can you play any traditional musical instruments such as the Dan Bau?"
+          },
+          {
+            "word": "audience",
+            "phonetic": "/ˈɔːdiəns/",
+            "pos": "noun",
+            "meaning": "Khán giả theo dõi buổi biểu diễn",
+            "example": "The enthusiastic audience applauded loudly at the end of the concert."
+          }
+        ],
+        "listening": {
+          "title": "School Music Festival Planning",
+          "context": "Nghe cuộc trò chuyện giữa hai bạn học sinh lớp 10 chuẩn bị cho ngày hội âm nhạc của trường.",
+          "lines": [
+            {
+              "speaker": "Minh",
+              "text": "Are you going to practice your guitar solo this afternoon, Thu?"
+            },
+            {
+              "speaker": "Thu",
+              "text": "Yes! I decided to perform a traditional Vietnamese melody combined with modern pop beats."
+            },
+            {
+              "speaker": "Minh",
+              "text": "That sounds fantastic! Have you registered for the preliminary audition yet?"
+            },
+            {
+              "speaker": "Thu",
+              "text": "I already submitted my registration form. Don't forget to come and cheer for our class!"
+            },
+            {
+              "speaker": "Minh",
+              "text": "Of course! Our entire class promised to be there in the front row."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What type of musical piece does Thu plan to perform?",
+            "options": [
+              "A pure heavy metal rock song",
+              "A traditional melody mixed with modern pop beats",
+              "A classical violin symphony",
+              "A foreign jazz opera"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "My music teacher encouraged me _______ for the provincial singing contest.",
+            "options": [
+              "participating",
+              "to participate",
+              "participate",
+              "participated"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc 'encourage someone + to-infinitive' (khuyến khích ai làm việc gì)."
+          },
+          {
+            "question": "Do you mind _______ down the volume? I am preparing for my English test.",
+            "options": [
+              "turn",
+              "to turn",
+              "turning",
+              "turned"
+            ],
+            "correctIndex": 2,
+            "explanation": "Sau động từ 'mind' luôn sử dụng danh động từ Gerund (V-ing): 'mind turning down'."
+          },
+          {
+            "question": "Van Cao was a celebrated Vietnamese _______ who wrote the national anthem 'Tien Quan Ca'.",
+            "options": [
+              "composer",
+              "audience",
+              "instrument",
+              "audition"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Composer' có nghĩa là nhà soạn nhạc, nhạc sĩ sáng tác."
+          }
+        ]
+      },
+      {
+        "id": "L10-4",
+        "title": "Unit 4: For a Better Community - Hoạt động vì cộng đồng",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Quá khứ đơn (Past Simple) và Quá khứ tiếp diễn (Past Continuous)</h4>\n            <div class=\"grammar-box\">\n              <p>Phối hợp hai thì trong câu với liên từ <strong>When</strong> và <strong>While</strong>:</p>\n              <ul>\n                <li>Một hành động đang diễn ra trong quá khứ thì một hành động khác bất ngờ xen vào:\n                  <br/><code>S + was/were + V-ing + WHEN + S + V2/ed</code>\n                  <br/><em>Ví dụ: We <strong>were cleaning</strong> the street when it <strong>started</strong> to pour with rain.</em>\n                </li>\n                <li>Hai hành động diễn ra song song cùng lúc trong quá khứ:\n                  <br/><code>WHILE + S + was/were + V-ing, S + was/were + V-ing</code>\n                  <br/><em>Ví dụ: While Lan <strong>was teaching</strong> English to orphans, Nam <strong>was playing</strong> games with them.</em>\n                </li>\n              </ul>\n            </div>\n            <h4>2. Từ loại tính từ kết thúc bằng -ed và -ing</h4>\n            <ul>\n              <li><strong>Tính từ kết thúc bằng -ed:</strong> Chỉ cảm xúc, trạng thái của con người (<em>interested, excited, bored, touched</em>).</li>\n              <li><strong>Tính từ kết thúc bằng -ing:</strong> Chỉ bản chất, đặc điểm của sự vật, sự việc tạo ra cảm xúc đó (<em>interesting, exciting, boring, touching</em>).</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "volunteer",
+            "phonetic": "/ˌvɒlənˈtɪə(r)/",
+            "pos": "noun/verb",
+            "meaning": "Tình nguyện viên / Làm việc tình nguyện",
+            "example": "Many high school students volunteer at local soup kitchens on weekends."
+          },
+          {
+            "word": "charity",
+            "phonetic": "/ˈtʃærəti/",
+            "pos": "noun",
+            "meaning": "Hội từ thiện, lòng bác ái",
+            "example": "The charity organization provides free warm meals for needy patients."
+          },
+          {
+            "word": "orphanage",
+            "phonetic": "/ˈɔːfənɪdʒ/",
+            "pos": "noun",
+            "meaning": "Trại trẻ mồ côi",
+            "example": "Our youth union paid a meaningful visit to the provincial orphanage."
+          },
+          {
+            "word": "remote area",
+            "phonetic": "/rɪˈməʊt ˈeəriə/",
+            "pos": "noun",
+            "meaning": "Vùng sâu, vùng xa, hẻo lánh",
+            "example": "Volunteers delivered books and winter coats to children in remote areas."
+          },
+          {
+            "word": "donate",
+            "phonetic": "/dəʊˈneɪt/",
+            "pos": "verb",
+            "meaning": "Quyên góp, ủng hộ",
+            "example": "Students donated hundreds of textbooks to the rural school library."
+          }
+        ],
+        "listening": {
+          "title": "Youth Union Volunteer Project",
+          "context": "Nghe buổi họp phổ biến kế hoạch chiến dịch 'Mùa hè xanh' của Đoàn trường THPT Số 2 Nguyễn Trường Tộ.",
+          "lines": [
+            {
+              "speaker": "Secretary",
+              "text": "This summer, our school Youth Union is launching a literacy project in a nearby remote village."
+            },
+            {
+              "speaker": "Member",
+              "text": "What specific tasks will volunteers undertake during the two weeks?"
+            },
+            {
+              "speaker": "Secretary",
+              "text": "We will tutor primary school pupils and donate notebooks collected by our students."
+            },
+            {
+              "speaker": "Member",
+              "text": "That is deeply meaningful. When will the preparation begin?"
+            },
+            {
+              "speaker": "Secretary",
+              "text": "While our logistics team is packing supplies, the academic team will design lesson plans."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What is the primary mission of the summer volunteer project?",
+            "options": [
+              "Organizing a commercial concert",
+              "Tutoring rural pupils and donating study supplies",
+              "Building a modern supermarket",
+              "Conducting an international tourist tour"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "While the volunteers _______ warm clothes for children, the local community leader arrived.",
+            "options": [
+              "packed",
+              "were packing",
+              "are packing",
+              "have packed"
+            ],
+            "correctIndex": 1,
+            "explanation": "Hành động đang diễn ra trong quá khứ kết hợp với 'While' sử dụng thì Quá khứ tiếp diễn: 'were packing'."
+          },
+          {
+            "question": "All the students felt deeply _______ when hearing about the hardships faced by disabled children.",
+            "options": [
+              "touching",
+              "touched",
+              "touches",
+              "touch"
+            ],
+            "correctIndex": 1,
+            "explanation": "Diễn tả cảm xúc của con người ta sử dụng tính từ đuôi -ed: 'felt deeply touched' (cảm thấy xúc động)."
+          },
+          {
+            "question": "Our club decided to _______ secondhand books to help build a library in the mountain village.",
+            "options": [
+              "donate",
+              "pollute",
+              "refuse",
+              "waste"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Donate' có nghĩa là quyên góp, trao tặng vật phẩm từ thiện."
+          }
+        ]
+      },
+      {
+        "id": "L10-5",
+        "title": "Unit 5: Inventions - Sáng chế công nghệ phục vụ đời sống",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Hiện tại hoàn thành (Present Perfect) và So sánh tính từ</h4>\n            <div class=\"grammar-box\">\n              <p><strong>Present Perfect với các liên từ chỉ sự tiến bộ kỹ thuật:</strong></p>\n              <ul>\n                <li>Diễn tả thành tựu đạt được tính đến hiện tại: <em>Scientists <strong>have invented</strong> many smart devices.</em></li>\n                <li>Dấu hiệu: <em>since, for, so far, up to now, recently, ever, never...</em></li>\n              </ul>\n              <hr/>\n              <p><strong>Cấu trúc Gerund và To-infinitive chỉ mục đích sử dụng:</strong></p>\n              <ul>\n                <li><code>used for + V-ing</code>: Được dùng cho mục đích gì (<em>Smartphones are used for communicating and studying.</em>)</li>\n                <li><code>used to + V (nguyên mẫu)</code>: Được dùng để làm gì (<em>A microscope is used to magnify small objects.</em>)</li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng trọng tâm chủ đề Inventions</h4>\n            <ul>\n              <li><strong>artificial intelligence (AI)</strong> (n): trí tuệ nhân tạo</li>\n              <li><strong>driverless car</strong> (n): xe ô tô tự lái</li>\n              <li><strong>versatile</strong> (adj): đa năng, linh hoạt</li>\n              <li><strong>portable</strong> (adj): nhỏ gọn, có thể mang theo dễ dàng</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "artificial intelligence",
+            "phonetic": "/ˌɑːtɪfɪʃl ɪnˈtelɪdʒəns/",
+            "pos": "noun",
+            "meaning": "Trí tuệ nhân tạo",
+            "example": "Artificial intelligence is transforming personalized learning experiences."
+          },
+          {
+            "word": "versatile",
+            "phonetic": "/ˈvɜːsətaɪl/",
+            "pos": "adj",
+            "meaning": "Đa năng, nhiều công dụng",
+            "example": "A smartphone is a remarkably versatile tool for modern students."
+          },
+          {
+            "word": "portable",
+            "phonetic": "/ˈpɔːtəbl/",
+            "pos": "adj",
+            "meaning": "Dễ dàng cầm tay hoặc mang đi xa",
+            "example": "Laptops and tablets are portable learning devices."
+          },
+          {
+            "word": "breakthrough",
+            "phonetic": "/ˈbreɪkθruː/",
+            "pos": "noun",
+            "meaning": "Bước đột phá khoa học công nghệ",
+            "example": "The discovery represents a major breakthrough in renewable battery storage."
+          },
+          {
+            "word": "economical",
+            "phonetic": "/ˌiːkəˈnɒmɪkl/",
+            "pos": "adj",
+            "meaning": "Tiết kiệm chi phí, tiết kiệm năng lượng",
+            "example": "Electric scooters are more economical than petrol motorcycles."
+          }
+        ],
+        "listening": {
+          "title": "Technological Innovations in Modern Classrooms",
+          "context": "Nghe bài thuyết trình của học sinh về các thiết bị thông minh hỗ trợ học tập.",
+          "lines": [
+            {
+              "speaker": "Presenter",
+              "text": "Good afternoon teachers and peers! Today, I want to discuss how AI tools benefit our education."
+            },
+            {
+              "speaker": "Student",
+              "text": "Could you mention one practical device we use every day?"
+            },
+            {
+              "speaker": "Presenter",
+              "text": "Interactive smartboards and portable tablets have transformed passive classrooms into active spaces."
+            },
+            {
+              "speaker": "Student",
+              "text": "How do they help students save time and resources?"
+            },
+            {
+              "speaker": "Presenter",
+              "text": "They allow instant file sharing and paperless note-taking, making learning both economical and eco-friendly."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What is one mentioned advantage of interactive smart tablets?",
+            "options": [
+              "They consume excessive battery power",
+              "They facilitate instant file sharing and paperless note-taking",
+              "They cause students to stop studying English",
+              "They are too bulky to transport"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "Smartphones are frequently used for _______ information on the Internet.",
+            "options": [
+              "search",
+              "searching",
+              "searched",
+              "searches"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc 'be used for + V-ing' diễn tả mục đích sử dụng của đồ vật: 'used for searching'."
+          },
+          {
+            "question": "This newly developed solar battery is much more _______ than conventional ones.",
+            "options": [
+              "economical",
+              "economy",
+              "economically",
+              "economics"
+            ],
+            "correctIndex": 0,
+            "explanation": "Vị trí cần một tính từ sau 'more': 'economical' (tiết kiệm chi phí/năng lượng)."
+          },
+          {
+            "question": "Since 2020, educational developers _______ many mobile learning applications.",
+            "options": [
+              "create",
+              "created",
+              "have created",
+              "are creating"
+            ],
+            "correctIndex": 2,
+            "explanation": "Với trạng ngữ 'Since 2020', ta sử dụng thì Hiện tại hoàn thành: 'have created'."
+          }
+        ]
+      },
+      {
+        "id": "L10-6",
+        "title": "Unit 6: Gender Equality - Bình đẳng giới trong giáo dục và việc làm",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Động từ khuyết thiếu trong câu bị động (Passive Modals)</h4>\n            <div class=\"grammar-box\">\n              <p><strong>Cấu trúc:</strong> <code>S + modal verb (must/should/can/may/might) + be + V3/ed (+ by O)</code></p>\n              <ul>\n                <li><em>Equal job opportunities <strong>must be provided</strong> to both men and women.</em></li>\n                <li><em>Girls <strong>should be encouraged</strong> to pursue careers in science, technology, engineering, and math (STEM).</em></li>\n                <li><em>Domestic violence <strong>cannot be tolerated</strong> in any civilized society.</em></li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng trọng tâm chủ đề Gender Equality</h4>\n            <ul>\n              <li><strong>gender discrimination</strong> (n): nạn phân biệt đối xử theo giới tính</li>\n              <li><strong>equal opportunities</strong> (n): cơ hội bình đẳng</li>\n              <li><strong>career choice</strong> (n): định hướng nghề nghiệp</li>\n              <li><strong>eliminate</strong> (v): xóa bỏ, loại trừ hoàn toàn</li>\n              <li><strong>empower</strong> (v): trao quyền, tạo điều kiện phát triển</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "equality",
+            "phonetic": "/iˈkwɒləti/",
+            "pos": "noun",
+            "meaning": "Sự bình đẳng, công bằng ngang nhau",
+            "example": "Gender equality is a fundamental human right."
+          },
+          {
+            "word": "discrimination",
+            "phonetic": "/dɪˌskrɪmɪˈneɪʃn/",
+            "pos": "noun",
+            "meaning": "Sự phân biệt đối xử bất công",
+            "example": "Laws have been enacted to prevent discrimination against female workers."
+          },
+          {
+            "word": "eliminate",
+            "phonetic": "/ɪˈlɪmɪneɪt/",
+            "pos": "verb",
+            "meaning": "Xóa bỏ, triệt tiêu hoàn toàn",
+            "example": "We strive to eliminate illiteracy and poverty in rural communities."
+          },
+          {
+            "word": "empower",
+            "phonetic": "/ɪmˈpaʊə(r)/",
+            "pos": "verb",
+            "meaning": "Trao quyền, tiếp thêm sức mạnh tự chủ",
+            "example": "Higher education empowers young women to lead and innovate."
+          },
+          {
+            "word": "wage",
+            "phonetic": "/weɪdʒ/",
+            "pos": "noun",
+            "meaning": "Tiền lương theo tuần/giờ lao động",
+            "example": "Men and women performing identical jobs should receive equal wages."
+          }
+        ],
+        "listening": {
+          "title": "Seminar: Equal Opportunities for All",
+          "context": "Nghe trích đoạn buổi tọa đàm về quyền tiếp cận giáo dục bình đẳng cho nữ sinh phổ thông.",
+          "lines": [
+            {
+              "speaker": "Moderator",
+              "text": "Welcome everyone to our school seminar on promoting gender equality in technical fields."
+            },
+            {
+              "speaker": "Speaker",
+              "text": "In the past, engineering and coding were mistakenly considered jobs only for males."
+            },
+            {
+              "speaker": "Moderator",
+              "text": "How can high schools help change this stereotype?"
+            },
+            {
+              "speaker": "Speaker",
+              "text": "Female students must be given equal access to robotics clubs and science competitions."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What solution is proposed to combat gender stereotypes in technical fields?",
+            "options": [
+              "Barring female students from science clubs",
+              "Providing female students equal access to robotics clubs and competitions",
+              "Stopping technology classes for all students",
+              "Permitting only boys to study programming"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "Equal employment opportunities must _______ to all qualified applicants regardless of gender.",
+            "options": [
+              "offer",
+              "be offered",
+              "offered",
+              "are offered"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc bị động với modal verb 'must': 'must + be + V3/ed' ('must be offered')."
+          },
+          {
+            "question": "Education is an indispensable tool that helps _______ women and girls around the globe.",
+            "options": [
+              "empower",
+              "discriminate",
+              "pollute",
+              "refuse"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Empower' mang nghĩa trao quyền, tạo điều kiện phát triển sự tự chủ."
+          },
+          {
+            "question": "Governments are enacting stricter regulations to _______ the wage gap between genders.",
+            "options": [
+              "eliminate",
+              "expand",
+              "encourage",
+              "celebrate"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Eliminate the wage gap' có nghĩa là xóa bỏ khoảng cách chênh lệch tiền lương."
+          }
+        ]
+      }
+    ],
+    "finalExam": [
+      {
+        "question": "1. My mother usually _______ the cooking, but today my father _______ dinner because she has an urgent school meeting.",
+        "options": [
+          "does / is cooking",
+          "is doing / cooks",
+          "do / cooks",
+          "does / cooks"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "2. Dividing household chores equally among members helps strengthen family _______.",
+        "options": [
+          "footprints",
+          "bonds",
+          "appliances",
+          "groceries"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "3. Choosing reusable shopping bags instead of single-use plastic ones is an _______ habit.",
+        "options": [
+          "eco-friendly",
+          "organic",
+          "electrical",
+          "chemical"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "4. The inter-school English Speaking Championship _______ next month by the Department of Foreign Languages.",
+        "options": [
+          "will hold",
+          "will be held",
+          "is holding",
+          "held"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "5. 'I have already booked the railway tickets.' - 'Really? Where _______ you _______ stay during the festival?'",
+        "options": [
+          "will / to",
+          "are / going to",
+          "do / go to",
+          "were / going to"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "6. In many modern families, both the husband and wife act as the primary _______.",
+        "options": [
+          "homemakers",
+          "breadwinners",
+          "teenagers",
+          "cleaners"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "7. All electrical appliances in the computer laboratory must _______ off before 5:00 PM.",
+        "options": [
+          "turn",
+          "be turned",
+          "turned",
+          "turning"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "8. My elder sister _______ that sharing housework equips young adolescents with valuable life skills.",
+        "options": [
+          "is believing",
+          "believes",
+          "was believing",
+          "believe"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "9. Which word has the closest meaning to 'rubbish'?",
+        "options": [
+          "laundry",
+          "garbage",
+          "grocery",
+          "gratitude"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "10. Solar radiation and offshore wind power are prominent examples of _______ energy sources.",
+        "options": [
+          "sustainable",
+          "polluted",
+          "harmful",
+          "disposable"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "11. The young singer decided _______ an original folk song for the preliminary audition.",
+        "options": [
+          "perform",
+          "to perform",
+          "performing",
+          "performed"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "12. He avoided _______ fast food and carbonated soft drinks to improve his physical condition.",
+        "options": [
+          "eat",
+          "to eat",
+          "eating",
+          "ate"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "question": "13. While the volunteers _______ books and stationery in the yard, heavy rain suddenly started to fall.",
+        "options": [
+          "packed",
+          "were packing",
+          "are packing",
+          "have packed"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "14. Everyone felt deeply _______ by the humanitarian efforts of the local charity club.",
+        "options": [
+          "touching",
+          "touched",
+          "touch",
+          "touches"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "15. Tablet computers are extremely useful for _______ information and reading educational e-books.",
+        "options": [
+          "search",
+          "searching",
+          "to search",
+          "searched"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "16. Artificial intelligence has created a major technological _______ across various industries.",
+        "options": [
+          "breakthrough",
+          "footprint",
+          "chore",
+          "appliance"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "17. More educational scholarships should _______ to girls living in remote mountainous regions.",
+        "options": [
+          "award",
+          "awarding",
+          "be awarded",
+          "are awarded"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "question": "18. Stricter institutional policies are needed to _______ gender discrimination in workplace recruitment.",
+        "options": [
+          "eliminate",
+          "create",
+          "support",
+          "encourage"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "19. The musical band is preparing to _______ their second studio album next summer.",
+        "options": [
+          "donate",
+          "release",
+          "divide",
+          "pollute"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "20. Unlike single-use plastics, canvas tote bags are highly durable and _______.",
+        "options": [
+          "versatile",
+          "destructive",
+          "harmful",
+          "temporary"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "ENG-G11-U1",
+    "title": "Tiếng Anh Lớp 11: Health, Generation Gap, Future Cities & Heritage",
+    "grade": "11",
+    "level": "Intermediate (B1)",
+    "duration": "24 tiết",
+    "teacher": "Thầy Nguyễn Hải Nam",
+    "description": "Chương trình GDPT mới lớp 11 bám sát SGK Global Success: Past Simple vs Present Perfect, Modal Verbs, Reported Speech, Phrasal Verbs, Conditionals Type 1 & 2, Heritage Preservation và đề thi chuẩn 20 câu.",
+    "badgeColor": "#0f766e",
+    "examDurationMinutes": 20,
+    "hoclieuUrl": "https://hoclieu.vn/book/76e85ac1-83b1-48b4-9b04-a1dfee610bd7",
+    "hoclieuTitle": "Học Liệu Số & Sách Giáo Khoa Tiếng Anh 11 - Global Success",
+    "lessons": [
+      {
+        "id": "L11-1",
+        "title": "Unit 1: A Long and Healthy Life - Lối sống lành mạnh",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Phân biệt Past Simple và Present Perfect</h4>\n            <div class=\"grammar-box\">\n              <p><strong>Past Simple (Quá khứ đơn):</strong> Diễn tả hành động đã diễn ra và chấm dứt tại thời điểm xác định cụ thể trong quá khứ.</p>\n              <ul>\n                <li>Dấu hiệu: <em>yesterday, last week, in 2022, two months ago, when I was a child...</em></li>\n                <li>Ví dụ: <em>She <strong>started</strong> practicing yoga at the fitness center two months ago.</em></li>\n              </ul>\n              <hr/>\n              <p><strong>Present Perfect (Hiện tại hoàn thành):</strong> Diễn tả hành động bắt đầu trong quá khứ, còn tiếp diễn đến hiện tại hoặc vừa mới hoàn thành để lại kết quả ở hiện tại.</p>\n              <ul>\n                <li>Dấu hiệu: <em>since, for, already, yet, just, recently, so far, up to now...</em></li>\n                <li>Ví dụ: <em>She <strong>has practiced</strong> yoga at the fitness center for two months.</em></li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng & Cụm từ chuyên đề Sức khỏe</h4>\n            <ul>\n              <li><strong>life expectancy</strong> (n): tuổi thọ trung bình dự kiến</li>\n              <li><strong>balanced diet</strong> (n): khẩu phần ăn uống cân đối, lành mạnh</li>\n              <li><strong>work out</strong> (phr v): tập thể dục rèn luyện thể lực</li>\n              <li><strong>antibiotics</strong> (n): thuốc kháng sinh trị nhiễm khuẩn</li>\n              <li><strong>give up / cut down on</strong>: từ bỏ hẳn / cắt giảm lượng tiêu thụ</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "life expectancy",
+            "phonetic": "/ˈlaɪf ɪkspektənsi/",
+            "pos": "noun",
+            "meaning": "Tuổi thọ trung bình",
+            "example": "Life expectancy has increased markedly thanks to advancements in modern medicine."
+          },
+          {
+            "word": "work out",
+            "phonetic": "/wɜːk aʊt/",
+            "pos": "phrasal verb",
+            "meaning": "Tập luyện thể thao nâng cao sức khỏe",
+            "example": "Regularly working out helps reduce chronic stress and improves stamina."
+          },
+          {
+            "word": "balanced diet",
+            "phonetic": "/ˌbælənst ˈdaɪət/",
+            "pos": "noun",
+            "meaning": "Chế độ dinh dưỡng cân bằng",
+            "example": "A balanced diet rich in leafy greens and protein protects against illnesses."
+          },
+          {
+            "word": "antibiotics",
+            "phonetic": "/ˌæntibaɪˈɒtɪks/",
+            "pos": "noun",
+            "meaning": "Thuốc kháng sinh",
+            "example": "Antibiotics should only be taken under the precise guidance of medical doctors."
+          },
+          {
+            "word": "immune system",
+            "phonetic": "/ɪˈmjuːn ˌsɪstəm/",
+            "pos": "noun",
+            "meaning": "Hệ miễn dịch tự nhiên của cơ thể",
+            "example": "Adequate sleep and nutritious food help strengthen the body's immune system."
+          }
+        ],
+        "listening": {
+          "title": "Health Advice for High School Students",
+          "context": "Nghe chuyên gia y tế chia sẻ lời khuyên về thói quen sinh hoạt khoa học cho học sinh THPT.",
+          "lines": [
+            {
+              "speaker": "Host",
+              "text": "Welcome Dr. Minh! Many high school students feel exhausted during intensive exam preparation. What advice do you have?"
+            },
+            {
+              "speaker": "Dr. Minh",
+              "text": "First, never skip breakfast! Your brain requires essential glucose and nutrients to focus during morning classes."
+            },
+            {
+              "speaker": "Host",
+              "text": "What about physical exercise and sleep hygiene?"
+            },
+            {
+              "speaker": "Dr. Minh",
+              "text": "Students should work out at least twenty minutes a day and cut down on screen time before bed. Getting seven to eight hours of sleep is non-negotiable."
+            }
+          ],
+          "checkQuestion": {
+            "question": "According to the specialist, what is the ideal sleep duration for students per day?",
+            "options": [
+              "4 to 5 hours",
+              "5 to 6 hours",
+              "7 to 8 hours",
+              "Over 10 hours"
+            ],
+            "correctIndex": 2
+          }
+        },
+        "quiz": [
+          {
+            "question": "My grandfather _______ morning exercises every day since he retired from work.",
+            "options": [
+              "practised",
+              "has practised",
+              "practises",
+              "is practising"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cụm 'since + mốc thời gian quá khứ' yêu cầu mệnh đề chính chia ở thì Hiện tại hoàn thành: 'has practised'."
+          },
+          {
+            "question": "Bacterial infections can be cured effectively with appropriate _______ prescribed by a doctor.",
+            "options": [
+              "antibiotics",
+              "footprints",
+              "junk food",
+              "workouts"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Antibiotics' là thuốc kháng sinh dùng để điều trị các bệnh do nhiễm khuẩn."
+          },
+          {
+            "question": "Drinking plenty of water and eating fresh citrus fruits strengthens our _______.",
+            "options": [
+              "carbon footprint",
+              "immune system",
+              "heavy lifting",
+              "homework"
+            ],
+            "correctIndex": 1,
+            "explanation": "'Immune system' có nghĩa là hệ miễn dịch bảo vệ cơ thể."
+          }
+        ]
+      },
+      {
+        "id": "L11-2",
+        "title": "Unit 2: The Generation Gap - Khoảng cách thế hệ & Động từ khuyết thiếu",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Phân biệt Must, Have to, Should và Ought to</h4>\n            <div class=\"grammar-box\">\n              <ul>\n                <li><strong>Must:</strong> Bổn phận mang tính chủ quan (người nói tự thấy cần thiết phải làm).<br/>\n                <em>Phủ định <code>mustn't</code>: CẤM ĐOÁN tuyệt đối (You mustn't cheat in exams).</em></li>\n                <li><strong>Have to:</strong> Bổn phận khách quan do luật pháp, nội quy trường học hay hoàn cảnh bên ngoài quy định.<br/>\n                <em>Phủ định <code>don't have to / doesn't have to</code>: KHÔNG BẮT BUỘC, không cần thiết phải làm (Tomorrow is Sunday, so I don't have to wake up at 6 AM).</em></li>\n                <li><strong>Should / Ought to:</strong> Đưa ra lời khuyên, khuyến nghị điều đúng đắn nên làm (You should listen to your parents' perspective).</li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng trọng tâm chủ đề Generation Gap</h4>\n            <ul>\n              <li><strong>nuclear family</strong> (n): gia đình hạt nhân (chỉ gồm cha mẹ và con cái)</li>\n              <li><strong>extended family</strong> (n): đại gia đình tam/tứ đại đồng đường</li>\n              <li><strong>curfew</strong> (n): giờ giới nghiêm phải về nhà buổi tối</li>\n              <li><strong>bridge the gap</strong>: thu hẹp khoảng cách bất đồng thế hệ</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "generation gap",
+            "phonetic": "/ˌdʒenəˈreɪʃn ɡæp/",
+            "pos": "noun",
+            "meaning": "Khoảng cách suy nghĩ, quan điểm giữa các thế hệ",
+            "example": "Open dinner discussions help bridge the generation gap in our family."
+          },
+          {
+            "word": "nuclear family",
+            "phonetic": "/ˌnjuːkliə ˈfæməli/",
+            "pos": "noun",
+            "meaning": "Gia đình hạt nhân (hai thế hệ)",
+            "example": "Most households in modern urban cities are nuclear families."
+          },
+          {
+            "word": "extended family",
+            "phonetic": "/ɪkˌstendɪd ˈfæməli/",
+            "pos": "noun",
+            "meaning": "Đại gia đình nhiều thế hệ sống chung",
+            "example": "Living in an extended family teaches youngsters respect for senior members."
+          },
+          {
+            "word": "curfew",
+            "phonetic": "/ˈkɜːfjuː/",
+            "pos": "noun",
+            "meaning": "Giờ giới nghiêm, giờ bắt buộc phải có mặt ở nhà",
+            "example": "My parents set a strict 9:30 PM curfew on school nights."
+          },
+          {
+            "word": "open-minded",
+            "phonetic": "/ˌəʊpən ˈmaɪndɪd/",
+            "pos": "adj",
+            "meaning": "Cởi mở, sẵn sàng lắng nghe ý kiến mới",
+            "example": "Grandparents are becoming more open-minded regarding modern career paths."
+          }
+        ],
+        "listening": {
+          "title": "Bridging Family Rules and Opinions",
+          "context": "Nghe chia sẻ về quy tắc giao tiếp và giải quyết xung đột ý kiến giữa cha mẹ và con cái.",
+          "lines": [
+            {
+              "speaker": "Hoang",
+              "text": "In my home, we have strict digital etiquette. We mustn't use smartphones during evening dinner."
+            },
+            {
+              "speaker": "Mai",
+              "text": "Do you have to wear formal attire on weekend family gatherings?"
+            },
+            {
+              "speaker": "Hoang",
+              "text": "No, we don't have to dress up formally, just neat and modest clothes. My parents also encourage us to voice our thoughts."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What digital rule is enforced at Hoang's family dinner table?",
+            "options": [
+              "Students must complete online quizzes during dinner",
+              "Smartphone usage is strictly prohibited during dinner",
+              "The television must stay on at maximum volume",
+              "Family members cannot speak during dinner"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "All high school students _______ wear the registered school uniform on Mondays.",
+            "options": [
+              "have to",
+              "mustn't",
+              "don't have to",
+              "shouldn't"
+            ],
+            "correctIndex": 0,
+            "explanation": "Quy định bắt buộc theo nội quy nhà trường diễn đạt bằng 'have to'."
+          },
+          {
+            "question": "Tomorrow is a national public holiday, so we _______ attend school classes.",
+            "options": [
+              "mustn't",
+              "don't have to",
+              "should",
+              "have to"
+            ],
+            "correctIndex": 1,
+            "explanation": "'Don't have to' diễn đạt điều không bắt buộc, không cần thiết phải làm."
+          },
+          {
+            "question": "Candidates _______ communicate or exchange papers with others during the formal test.",
+            "options": [
+              "mustn't",
+              "don't have to",
+              "ought to",
+              "might not"
+            ],
+            "correctIndex": 0,
+            "explanation": "Quy định cấm đoán tuyệt đối trong phòng thi sử dụng 'mustn't'."
+          }
+        ]
+      },
+      {
+        "id": "L11-3",
+        "title": "Unit 3: Cities of the Future - Đô thị tương lai & Câu tường thuật",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Câu gián tiếp / Câu tường thuật (Reported Speech)</h4>\n            <div class=\"grammar-box\">\n              <p>Khi chuyển từ câu trực tiếp sang câu gián tiếp, cần thực hiện lùi thì và đổi đại từ, trạng từ chỉ thời gian/nơi chốn:</p>\n              <ul>\n                <li>Hiện tại đơn &rarr; Quá khứ đơn (<em>am/is/are &rarr; was/were; V1 &rarr; V2/ed</em>)</li>\n                <li>Hiện tại tiếp diễn &rarr; Quá khứ tiếp diễn (<em>am/is/are + V-ing &rarr; was/were + V-ing</em>)</li>\n                <li>Hiện tại hoàn thành &rarr; Quá khứ hoàn thành (<em>have/has + V3 &rarr; had + V3</em>)</li>\n                <li>Will &rarr; Would; Can &rarr; Could; Must &rarr; Had to</li>\n                <li>Trạng từ: <em>now &rarr; then; today &rarr; that day; yesterday &rarr; the day before / the previous day; tomorrow &rarr; the following day / the next day; here &rarr; there</em></li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng trọng tâm chủ đề Smart Cities</h4>\n            <ul>\n              <li><strong>smart city</strong> (n): thành phố thông minh điều hành bằng công nghệ số</li>\n              <li><strong>infrastructure</strong> (n): cơ sở hạ tầng giao thông, viễn thông</li>\n              <li><strong>pedestrian zone</strong> (n): tuyến phố đi bộ</li>\n              <li><strong>renewable energy</strong> (n): nguồn năng lượng tái tạo</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "infrastructure",
+            "phonetic": "/ˈɪnfrəstrʌktʃə(r)/",
+            "pos": "noun",
+            "meaning": "Cơ sở hạ tầng (đường xá, cầu cống, mạng lưới điện)",
+            "example": "The government is investing heavily in modern transport infrastructure."
+          },
+          {
+            "word": "pedestrian",
+            "phonetic": "/pəˈdestriən/",
+            "pos": "noun/adj",
+            "meaning": "Người đi bộ / Dành riêng cho người đi bộ",
+            "example": "More pedestrian precincts are being built in smart urban areas."
+          },
+          {
+            "word": "renewable",
+            "phonetic": "/rɪˈnjuːəbl/",
+            "pos": "adj",
+            "meaning": "Có thể tái tạo (năng lượng mặt trời, gió)",
+            "example": "Future cities will run entirely on clean, renewable energy sources."
+          },
+          {
+            "word": "liveable",
+            "phonetic": "/ˈlɪvəbl/",
+            "pos": "adj",
+            "meaning": "Đáng sống, có chất lượng cuộc sống tốt",
+            "example": "Creating green parks makes metropolitan areas significantly more liveable."
+          },
+          {
+            "word": "overcrowded",
+            "phonetic": "/ˌəʊvəˈkraʊdɪd/",
+            "pos": "adj",
+            "meaning": "Quá đông đúc, quá tải dân số",
+            "example": "Public buses in overcrowded cities often suffer severe traffic delays."
+          }
+        ],
+        "listening": {
+          "title": "Urban Planning: Designing Smart Green Cities",
+          "context": "Nghe bài phỏng vấn kiến trúc sư đô thị về mô hình thành phố thông minh trong tương lai.",
+          "lines": [
+            {
+              "speaker": "Journalist",
+              "text": "What is the key element that makes a city truly smart and sustainable?"
+            },
+            {
+              "speaker": "Architect",
+              "text": "A smart city utilizes IoT sensors to regulate public lighting and traffic signals in real time."
+            },
+            {
+              "speaker": "Journalist",
+              "text": "Will high-rise buildings continue to dominate the urban landscape?"
+            },
+            {
+              "speaker": "Architect",
+              "text": "Yes, but they will feature rooftop solar panels and vertical gardens to absorb urban heat."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What feature will future high-rise buildings possess according to the architect?",
+            "options": [
+              "They will ban all digital internet connectivity",
+              "They will feature rooftop solar panels and vertical gardens",
+              "They will replace all residential homes completely",
+              "They will emit twice as much greenhouse gas"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "The mayor stated that the city _______ a brand-new electric metro line the following year.",
+            "options": [
+              "will build",
+              "would build",
+              "builds",
+              "is building"
+            ],
+            "correctIndex": 1,
+            "explanation": "Trong câu tường thuật gián tiếp, 'will' lùi thì thành 'would': 'would build'."
+          },
+          {
+            "question": "Developing green spaces and walking paths makes modern cities more _______ for residents.",
+            "options": [
+              "liveable",
+              "overcrowded",
+              "polluted",
+              "exhausted"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Liveable' có nghĩa là đáng sống, tiện nghi cho cuộc sống cư dân."
+          },
+          {
+            "question": "Lan told me that she _______ her research project on solar roofs the day before.",
+            "options": [
+              "has completed",
+              "had completed",
+              "completes",
+              "is completing"
+            ],
+            "correctIndex": 1,
+            "explanation": "Câu tường thuật lùi thì từ Quá khứ đơn / Hiện tại hoàn thành về Quá khứ hoàn thành: 'had completed'."
+          }
+        ]
+      },
+      {
+        "id": "L11-4",
+        "title": "Unit 4: ASEAN and Vietnam - Cụm động từ (Phrasal Verbs)",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Cụm động từ (Phrasal Verbs) thông dụng</h4>\n            <div class=\"grammar-box\">\n              <p>Cụm động từ gồm một động từ kết hợp với một hoặc hai tiểu từ (giới từ/phó từ), mang ý nghĩa đặc thù:</p>\n              <ul>\n                <li><strong>look forward to + V-ing:</strong> Rất mong đợi, trông ngóng điều gì xảy ra</li>\n                <li><strong>set up:</strong> Thành lập, thiết lập (tổ chức, ủy ban, doanh nghiệp)</li>\n                <li><strong>carry out:</strong> Tiến hành, thực hiện (nghiên cứu, dự án, cuộc khảo sát)</li>\n                <li><strong>bring about:</strong> Mang lại, đem đến (sự thay đổi tích cực, hòa bình)</li>\n                <li><strong>stand for:</strong> Viết tắt của, đại diện cho</li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng trọng tâm chủ đề ASEAN</h4>\n            <ul>\n              <li><strong>association</strong> (n): hiệp hội, tổ chức liên kết</li>\n              <li><strong>solidarity</strong> (n): tinh thần đoàn kết, gắn bó keo sơn</li>\n              <li><strong>charter</strong> (n): hiến chương</li>\n              <li><strong>cooperation</strong> (n): sự hợp tác quốc tế</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "solidarity",
+            "phonetic": "/ˌsɒlɪˈdærəti/",
+            "pos": "noun",
+            "meaning": "Sự đoàn kết, nhất trí cao",
+            "example": "The ASEAN summit fosters regional solidarity and mutual understanding."
+          },
+          {
+            "word": "charter",
+            "phonetic": "/ˈtʃɑːtə(r)/",
+            "pos": "noun",
+            "meaning": "Hiến chương văn kiện pháp lý",
+            "example": "The ASEAN Charter entered into force in December 2008."
+          },
+          {
+            "word": "cooperation",
+            "phonetic": "/kəʊˌɒpəˈreɪʃn/",
+            "pos": "noun",
+            "meaning": "Sự hợp tác, chung tay thực hiện",
+            "example": "Educational and economic cooperation is vital for developing member nations."
+          },
+          {
+            "word": "diplomatic",
+            "phonetic": "/ˌdɪpləˈmætɪk/",
+            "pos": "adj",
+            "meaning": "Thuộc về ngoại giao",
+            "example": "Vietnam has established diplomatic relations with hundreds of sovereign states."
+          },
+          {
+            "word": "diversity",
+            "phonetic": "/daɪˈvɜːsəti/",
+            "pos": "noun",
+            "meaning": "Sự phong phú, đa dạng bản sắc",
+            "example": "Southeast Asia boasts remarkable cultural and linguistic diversity."
+          }
+        ],
+        "listening": {
+          "title": "Vietnam in the ASEAN Community",
+          "context": "Nghe trích đoạn hội thảo thanh niên ASEAN về vai trò của Việt Nam trong khối liên minh khu vực.",
+          "lines": [
+            {
+              "speaker": "Delegate",
+              "text": "Since joining ASEAN in 1995, Vietnam has actively contributed to regional peace and stability."
+            },
+            {
+              "speaker": "Student",
+              "text": "What youth exchange programs are currently carried out among member countries?"
+            },
+            {
+              "speaker": "Delegate",
+              "text": "The ASEAN Youth Camp and cultural volunteer exchanges are held annually to bring young leaders closer."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What is the purpose of annual ASEAN youth exchange programs?",
+            "options": [
+              "Promoting commercial weapon manufacturing",
+              "Fostering connection and cooperation among young regional leaders",
+              "Canceling all cultural educational festivals",
+              "Enforcing single-currency trade"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "The scientific committee plans to _______ a comprehensive survey on regional biodiversity.",
+            "options": [
+              "carry out",
+              "look forward",
+              "give up",
+              "take out"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Carry out a survey' là collocation chuẩn có nghĩa là tiến hành/thực hiện một cuộc khảo sát."
+          },
+          {
+            "question": "We are really looking forward to _______ delegates from ASEAN member nations next week.",
+            "options": [
+              "meet",
+              "meeting",
+              "met",
+              "have met"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc 'look forward to + V-ing': 'looking forward to meeting'."
+          },
+          {
+            "question": "ASEAN stands for the Association of Southeast Asian _______.",
+            "options": [
+              "Nations",
+              "Nature",
+              "Notices",
+              "Neighbours"
+            ],
+            "correctIndex": 0,
+            "explanation": "ASEAN là viết tắt của 'Association of Southeast Asian Nations'."
+          }
+        ]
+      },
+      {
+        "id": "L11-5",
+        "title": "Unit 5: Global Warming - Biến đổi khí hậu & Câu điều kiện",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Câu điều kiện Loại 1 và Loại 2 (Conditional Types 1 & 2)</h4>\n            <div class=\"grammar-box\">\n              <p><strong>Điều kiện Loại 1 (Có thể xảy ra ở hiện tại hoặc tương lai):</strong></p>\n              <p><code>If + S + V(hiện tại đơn), S + will/can/may + V(nguyên mẫu)</code></p>\n              <ul>\n                <li>Ví dụ: <em>If global temperatures <strong>continue</strong> to rise, polar ice caps <strong>will melt</strong> rapidly.</em></li>\n              </ul>\n              <hr/>\n              <p><strong>Điều kiện Loại 2 (Giả định không có thật hoặc trái ngược với hiện tại):</strong></p>\n              <p><code>If + S + V2/ed (were cho mọi ngôi), S + would/could + V(nguyên mẫu)</code></p>\n              <ul>\n                <li>Ví dụ: <em>If people <strong>cut</strong> down fewer forests, the planet <strong>would be</strong> greener.</em></li>\n                <li>Ví dụ: <em>If I <strong>were</strong> the Minister of Environment, I <strong>would ban</strong> coal power plants.</em></li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng chuyên ngành Môi trường & Khí hậu</h4>\n            <ul>\n              <li><strong>greenhouse effect</strong> (n): hiệu ứng nhà kính</li>\n              <li><strong>deforestation</strong> (n): nạn tàn phá rừng</li>\n              <li><strong>emission</strong> (n): khí thải độc hại xả vào khí quyển</li>\n              <li><strong>catastrophic</strong> (adj): mang tính thảm họa nghiêm trọng</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "greenhouse effect",
+            "phonetic": "/ˈɡriːnhaʊs ɪfekt/",
+            "pos": "noun",
+            "meaning": "Hiệu ứng nhà kính gây ấm lên toàn cầu",
+            "example": "The greenhouse effect traps solar radiation within the Earth's lower atmosphere."
+          },
+          {
+            "word": "deforestation",
+            "phonetic": "/diːˌfɒrɪˈsteɪʃn/",
+            "pos": "noun",
+            "meaning": "Nạn chặt phá hủy hoại rừng",
+            "example": "Deforestation in tropical zones severely threatens global biodiversity."
+          },
+          {
+            "word": "emission",
+            "phonetic": "/ɪˈmɪʃn/",
+            "pos": "noun",
+            "meaning": "Sự phát thải chất khí vào không khí",
+            "example": "Strict regulations have been drafted to limit industrial carbon emissions."
+          },
+          {
+            "word": "catastrophic",
+            "phonetic": "/ˌkætəˈstrɒfɪk/",
+            "pos": "adj",
+            "meaning": "Gây thảm họa khôn lường",
+            "example": "Severe droughts and floods have catastrophic consequences for farming."
+          },
+          {
+            "word": "consequence",
+            "phonetic": "/ˈkɒnsɪkwəns/",
+            "pos": "noun",
+            "meaning": "Hệ quả, hậu quả kéo theo",
+            "example": "Rising sea levels are a direct consequence of global temperature escalation."
+          }
+        ],
+        "listening": {
+          "title": "Climate Action in the Mekong Delta",
+          "context": "Nghe báo cáo thực địa về tác động của nước biển dâng và hạn hán tại Đồng bằng sông Cửu Long.",
+          "lines": [
+            {
+              "speaker": "Reporter",
+              "text": "Climate change is no longer a distant theoretical threat for farmers in the Mekong Delta."
+            },
+            {
+              "speaker": "Expert",
+              "text": "Rising sea water has caused severe saline intrusion into paddy fields."
+            },
+            {
+              "speaker": "Reporter",
+              "text": "What happens if local communities do not adapt their cultivation models promptly?"
+            },
+            {
+              "speaker": "Expert",
+              "text": "If farmers do not switch to salt-tolerant crops and efficient drip irrigation, their crop yields will plummet."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What immediate threat is facing rice cultivation in the Mekong Delta?",
+            "options": [
+              "Heavy snow blizzards",
+              "Saline water intrusion into agricultural paddy fields",
+              "Excessive drop in annual temperatures",
+              "Loss of cellular internet reception"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "If global sea levels _______ to increase, many coastal regions will suffer frequent flooding.",
+            "options": [
+              "continued",
+              "continue",
+              "will continue",
+              "has continued"
+            ],
+            "correctIndex": 1,
+            "explanation": "Mệnh đề 'If' trong câu điều kiện loại 1 chia ở thì Hiện tại đơn: 'continue'."
+          },
+          {
+            "question": "If humanity _______ all fossil fuel usage today, global temperatures would stabilize much sooner.",
+            "options": [
+              "stops",
+              "stopped",
+              "will stop",
+              "has stopped"
+            ],
+            "correctIndex": 1,
+            "explanation": "Mệnh đề chính dùng 'would stabilize' (câu điều kiện loại 2), do đó mệnh đề 'If' chia quá khứ đơn: 'stopped'."
+          },
+          {
+            "question": "Industrial carbon _______ must be dramatically decreased to mitigate catastrophic weather events.",
+            "options": [
+              "emissions",
+              "groceries",
+              "curfews",
+              "auditions"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Carbon emissions' chỉ lượng phát thải khí carbon từ hoạt động công nghiệp."
+          }
+        ]
+      },
+      {
+        "id": "L11-6",
+        "title": "Unit 6: Preserving Our Heritage - Bảo tồn di sản văn hóa & Câu bị động nâng cao",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Trọng tâm Ngữ pháp: Câu bị động với Động từ khuyết thiếu & Thể bị động khách quan</h4>\n            <div class=\"grammar-box\">\n              <p><strong>1. Passive Voice with Modal Verbs:</strong></p>\n              <p><code>S + can/could/must/should/ought to + be + V3/ed (+ by O)</code></p>\n              <ul>\n                <li><em>Historical monuments <strong>must be preserved</strong> for future generations.</em></li>\n                <li><em>Traditional customs <strong>should be introduced</strong> in high school cultural curriculums.</em></li>\n              </ul>\n              <hr/>\n              <p><strong>2. Impersonal Passive (Thể bị động khách quan tường thuật):</strong></p>\n              <p><code>It + is said/believed/reported/thought that + Clause</code></p>\n              <ul>\n                <li><em>It is believed that Trang An Landscape Complex is an extraordinary masterpiece of nature.</em></li>\n              </ul>\n            </div>\n            <h4>2. Từ vựng trọng tâm chủ đề Cultural Heritage</h4>\n            <ul>\n              <li><strong>tangible heritage</strong> (n): di sản vật thể (chùa chiền, thành quách, lăng tẩm)</li>\n              <li><strong>intangible heritage</strong> (n): di sản phi vật thể (dân ca Quan Họ, Nhã nhạc cung đình Huế)</li>\n              <li><strong>restore</strong> (v): trùng tu, phục chế</li>\n              <li><strong>preserve</strong> (v): bảo tồn, gìn giữ nguyên trạng</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "tangible",
+            "phonetic": "/ˈtændʒəbl/",
+            "pos": "adj",
+            "meaning": "Vật thể, hiện hữu hữu hình chạm vào được",
+            "example": "The ancient citadel of Hue is recognized as significant tangible heritage."
+          },
+          {
+            "word": "intangible",
+            "phonetic": "/ɪnˈtændʒəbl/",
+            "pos": "adj",
+            "meaning": "Phi vật thể (văn hóa tinh thần, nghệ thuật)",
+            "example": "Bac Ninh Quan Ho folk songs represent invaluable intangible cultural heritage."
+          },
+          {
+            "word": "restore",
+            "phonetic": "/rɪˈstɔː(r)/",
+            "pos": "verb",
+            "meaning": "Trùng tu, phục hồi lại hiện trạng ban đầu",
+            "example": "Expert artisans have restored ancient wooden temples in Hoi An."
+          },
+          {
+            "word": "heritage",
+            "phonetic": "/ˈherɪtɪdʒ/",
+            "pos": "noun",
+            "meaning": "Di sản truyền thống để lại cho hậu thế",
+            "example": "Preserving cultural heritage is every citizen's civic responsibility."
+          },
+          {
+            "word": "monument",
+            "phonetic": "/ˈmɒnjumənt/",
+            "pos": "noun",
+            "meaning": "Khu di tích lịch sử, đài tưởng niệm",
+            "example": "Tourists admire the stone monuments constructed during the Ly and Tran dynasties."
+          }
+        ],
+        "listening": {
+          "title": "Preserving Ancient Architectural Wonders",
+          "context": "Nghe buổi tọa đàm về kỹ thuật trùng tu bảo tồn các công trình phố cổ Hội An.",
+          "lines": [
+            {
+              "speaker": "Guide",
+              "text": "Hoi An Ancient Town was inscribed as a UNESCO World Heritage site in 1999."
+            },
+            {
+              "speaker": "Student",
+              "text": "How do preservationists protect ancient timber houses from humidity and annual typhoons?"
+            },
+            {
+              "speaker": "Guide",
+              "text": "Each building is meticulously examined, and weathered beams are carefully replaced with durable local wood."
+            }
+          ],
+          "checkQuestion": {
+            "question": "When was Hoi An Ancient Town recognized as a UNESCO World Heritage site?",
+            "options": [
+              "In 1975",
+              "In 1999",
+              "In 2020",
+              "In 1890"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "Valuable historical artifacts in national museums must _______ under climate-controlled conditions.",
+            "options": [
+              "keep",
+              "be kept",
+              "keeping",
+              "kept"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc bị động với modal verb 'must': 'must be kept'."
+          },
+          {
+            "question": "Bac Ninh Quan Ho singing has been inscribed by UNESCO as an _______ cultural heritage of humanity.",
+            "options": [
+              "intangible",
+              "appliances",
+              "economical",
+              "overcrowded"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Intangible cultural heritage' chỉ di sản văn hóa phi vật thể."
+          },
+          {
+            "question": "It is _______ that cultural awareness helps young people appreciate their national identity.",
+            "options": [
+              "believe",
+              "believed",
+              "believing",
+              "believes"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc bị động khách quan: 'It is believed that...' (Người ta tin rằng...)."
+          }
+        ]
+      }
+    ],
+    "finalExam": [
+      {
+        "question": "1. Medical researchers _______ effective treatments for this illness in recent years.",
+        "options": [
+          "developed",
+          "have developed",
+          "develop",
+          "are developing"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "2. Students _______ bring unauthorized electronic devices into the national examination room.",
+        "options": [
+          "don't have to",
+          "mustn't",
+          "should",
+          "have to"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "3. An _______ family consists of grandparents, parents, and children living together under one roof.",
+        "options": [
+          "extended",
+          "nuclear",
+          "single",
+          "independent"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "4. Regular physical exercise and a _______ diet are vital components of personal wellness.",
+        "options": [
+          "balanced",
+          "fast",
+          "heavy",
+          "strict"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "5. He _______ unhealthy eating habits several months ago after consulting his doctor.",
+        "options": [
+          "has given up",
+          "gave up",
+          "gives up",
+          "was giving up"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "6. The mayor declared that municipal authorities _______ more bicycle lanes the following month.",
+        "options": [
+          "install",
+          "would install",
+          "will install",
+          "are installing"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "7. Developing well-planned public parks makes large metropolitan areas significantly more _______.",
+        "options": [
+          "liveable",
+          "overcrowded",
+          "polluted",
+          "exhausted"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "8. We are truly looking forward to _______ the international student delegation this weekend.",
+        "options": [
+          "welcome",
+          "welcoming",
+          "welcomed",
+          "have welcomed"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "9. A special scientific committee was formed to _______ research on coastal mangrove protection.",
+        "options": [
+          "carry out",
+          "give up",
+          "look for",
+          "stand for"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "10. If greenhouse gas emissions continue to climb, average global temperatures _______ dangerously.",
+        "options": [
+          "increase",
+          "will increase",
+          "increased",
+          "would increase"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "11. If all governments _______ fossil fuel extraction tomorrow, atmospheric pollution would drop drastically.",
+        "options": [
+          "ban",
+          "banned",
+          "will ban",
+          "have banned"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "12. Massive tropical _______ leads directly to devastating soil erosion and species extinction.",
+        "options": [
+          "deforestation",
+          "infrastructure",
+          "charter",
+          "solidarity"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "13. Ancient temple complexes and imperial tombs are categorized as _______ cultural heritage.",
+        "options": [
+          "tangible",
+          "intangible",
+          "digital",
+          "temporary"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "14. It is widely _______ that cultural preservation fosters deep civic pride among young generations.",
+        "options": [
+          "say",
+          "believed",
+          "reporting",
+          "think"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "15. All historical relics discovered during road construction must _______ to the provincial museum immediately.",
+        "options": [
+          "transfer",
+          "be transferred",
+          "transferred",
+          "transferring"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "16. My father sets a strict 10:00 PM _______ whenever we attend friends' birthday parties.",
+        "options": [
+          "curfew",
+          "emission",
+          "diet",
+          "footprint"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "17. ASEAN was established with the core purpose of accelerating economic growth and regional _______.",
+        "options": [
+          "solidarity",
+          "curfew",
+          "pollution",
+          "antibiotics"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "18. She told her classmate that she _______ her English presentation on smart cities the night before.",
+        "options": [
+          "has finished",
+          "had finished",
+          "finishes",
+          "is finishing"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "19. The doctor advised the patient to _______ on salty snacks and sugary carbonated drinks.",
+        "options": [
+          "cut down",
+          "carry out",
+          "stand for",
+          "take off"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "20. Solar radiation and offshore wind represent inexhaustible, _______ sources of clean power.",
+        "options": [
+          "renewable",
+          "catastrophic",
+          "overcrowded",
+          "tangible"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  },
+  {
+    "id": "ENG-G12-EXAM",
+    "title": "Tiếng Anh Lớp 12: Chuyên Đề Ôn Thi Tốt Nghiệp THPT Quốc Gia & Đọc Hiểu Nâng Cao",
+    "grade": "12",
+    "level": "Upper-Intermediate (B1-B2)",
+    "duration": "28 tiết",
+    "teacher": "Thầy Nguyễn Hải Nam",
+    "description": "Chuyên đề tổng hợp ôn thi Tốt nghiệp THPT Quốc gia theo cấu trúc chuẩn của Bộ GD&ĐT: Mệnh đề quan hệ & rút gọn, Câu điều kiện trộn & đảo ngữ, Giả định thức, Câu hỏi đuôi, Câu chẻ, Kỹ thuật đọc hiểu và đề thi thử 20 câu.",
+    "badgeColor": "#3730a3",
+    "examDurationMinutes": 25,
+    "hoclieuUrl": "https://hoclieu.vn/book/e7ed2390-c936-4306-89e3-e26e84b3450a",
+    "hoclieuTitle": "Học Liệu Số & Sách Giáo Khoa Tiếng Anh 12 - Global Success",
+    "lessons": [
+      {
+        "id": "L12-1",
+        "title": "Chuyên đề 1: Phối hợp Thì Quá khứ và Mệnh đề Quan hệ",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Phối hợp Thì Past Simple, Past Continuous và Past Perfect</h4>\n            <div class=\"grammar-box\">\n              <ul>\n                <li>Hành động đang diễn ra trong quá khứ thì một hành động khác xen vào:\n                  <br/><em>While the teacher <strong>was explaining</strong> the grammar concept, a student <strong>asked</strong> a question.</em></li>\n                <li>Hai hành động diễn ra song song cùng lúc:\n                  <br/><em>While she <strong>was reading</strong> the reference paper, her classmate <strong>was taking</strong> notes.</em></li>\n                <li>Một hành động xảy ra và hoàn thành trước một hành động khác trong quá khứ (Past Perfect):\n                  <br/><em>By the time the invigilator <strong>entered</strong> the hall, all candidates <strong>had taken</strong> their assigned seats.</em></li>\n              </ul>\n            </div>\n            <h4>2. Đại từ và Trạng từ quan hệ (Who, Whom, Which, That, Whose, Where, When, Why)</h4>\n            <div class=\"grammar-box\">\n              <ul>\n                <li><code>Who</code>: thay cho danh từ chỉ người làm chủ ngữ.</li>\n                <li><code>Whom</code>: thay cho danh từ chỉ người làm tân ngữ (sau giới từ bắt buộc dùng Whom).</li>\n                <li><code>Which</code>: thay cho danh từ chỉ sự vật/hiện tượng.</li>\n                <li><code>Whose</code>: chỉ sự sở hữu cho cả người lẫn vật (<em>whose + N</em>).</li>\n                <li><strong>Rút gọn mệnh đề quan hệ:</strong>\n                  <ul>\n                    <li>Dạng chủ động: Rút thành <code>V-ing</code> (<em>The boy who sits next to me &rarr; The boy sitting next to me</em>).</li>\n                    <li>Dạng bị động: Rút thành <code>V3/ed</code> (<em>The books which were published in 2026 &rarr; The books published in 2026</em>).</li>\n                    <li>Có các từ <em>the first, the second, the only, the last, so sánh nhất</em>: Rút thành <code>to-V / to be V3</code>.</li>\n                  </ul>\n                </li>\n              </ul>\n            </div>\n        ",
+        "vocab": [
+          {
+            "word": "dedicate",
+            "phonetic": "/ˈdedɪkeɪt/",
+            "pos": "verb",
+            "meaning": "Cống hiến hết mình, tận tụy",
+            "example": "The venerable teacher dedicated four decades to guiding generations of students."
+          },
+          {
+            "word": "achievement",
+            "phonetic": "/əˈtʃiːvmənt/",
+            "pos": "noun",
+            "meaning": "Thành tựu, thành tích học tập xuất sắc",
+            "example": "Securing a spot in top universities is a glorious academic achievement."
+          },
+          {
+            "word": "perseverance",
+            "phonetic": "/ˌpɜːsɪˈvɪərəns/",
+            "pos": "noun",
+            "meaning": "Sự kiên trì, lòng bền bỉ không nản chí",
+            "example": "Conquering advanced English reading tests requires steadfast perseverance."
+          },
+          {
+            "word": "academic",
+            "phonetic": "/ˌækəˈdemɪk/",
+            "pos": "adj",
+            "meaning": "Thuộc về học thuật, nghiên cứu lý thuyết",
+            "example": "High school seniors must cultivate rigorous academic study habits."
+          },
+          {
+            "word": "distinguished",
+            "phonetic": "/dɪˈstɪŋɡwɪʃt/",
+            "pos": "adj",
+            "meaning": "Xuất sắc, ưu tú, được kính trọng",
+            "example": "Nguyen Truong To was a distinguished reformer in Vietnamese history."
+          }
+        ],
+        "listening": {
+          "title": "Study Strategies for Graduation Examination",
+          "context": "Nghe hướng dẫn phương pháp xây dựng kế hoạch ôn tập môn Tiếng Anh hiệu quả cho kỳ thi Tốt nghiệp THPT.",
+          "lines": [
+            {
+              "speaker": "Speaker",
+              "text": "Regular practice and consistent vocabulary consolidation are critical for high school seniors."
+            },
+            {
+              "speaker": "Speaker",
+              "text": "Dedicate thirty minutes each day to reading comprehension texts and analyzing grammatical structures."
+            },
+            {
+              "speaker": "Speaker",
+              "text": "Pay close attention to relative clause reduction and tense coordination in past narratives."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What primary learning strategy is recommended in the audio passage?",
+            "options": [
+              "Practicing reading comprehension and analyzing grammar daily",
+              "Revising only during the final examination week",
+              "Memorizing isolated words without contextual practice",
+              "Ignoring reading comprehension skills entirely"
+            ],
+            "correctIndex": 0
+          }
+        },
+        "quiz": [
+          {
+            "question": "While we _______ for the national examination last evening, a sudden storm interrupted the municipal power supply.",
+            "options": [
+              "revised",
+              "were revising",
+              "have revised",
+              "are revising"
+            ],
+            "correctIndex": 1,
+            "explanation": "Một hành động đang diễn ra trong quá khứ ('were revising') bị một hành động khác xen vào ('interrupted')."
+          },
+          {
+            "question": "The teacher _______ students won provincial English prizes was formally commended in the school assembly.",
+            "options": [
+              "who",
+              "whom",
+              "whose",
+              "which"
+            ],
+            "correctIndex": 2,
+            "explanation": "'Whose' là đại từ quan hệ chỉ quyền sở hữu đối với danh từ đi ngay sau ('students')."
+          },
+          {
+            "question": "The candidate was the first person _______ all forty test questions accurately.",
+            "options": [
+              "completing",
+              "to complete",
+              "completed",
+              "complete"
+            ],
+            "correctIndex": 1,
+            "explanation": "Sau cụm từ 'the first person', mệnh đề quan hệ được rút gọn bằng 'to-infinitive': 'to complete'."
+          }
+        ]
+      },
+      {
+        "id": "L12-2",
+        "title": "Chuyên đề 2: Câu điều kiện hỗn hợp & Kỹ năng Đọc hiểu",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Câu điều kiện Loại 3 và Câu điều kiện Trộn (Mixed Conditionals)</h4>\n            <div class=\"grammar-box\">\n              <p><strong>1. Điều kiện Loại 3 (Giả định trái ngược với quá khứ):</strong></p>\n              <p><code>If + S + had + V3/ed, S + would/could/might + have + V3/ed</code></p>\n              <ul>\n                <li><em>If I <strong>had revised</strong> the irregular verbs, I <strong>would have achieved</strong> a perfect score.</em></li>\n              </ul>\n              <hr/>\n              <p><strong>2. Điều kiện Trộn (Loại 3 kết hợp Loại 2 - Quá khứ ảnh hưởng đến Hiện tại):</strong></p>\n              <p><code>If + S + had + V3/ed, S + would + V(nguyên mẫu) + NOW / TODAY</code></p>\n              <ul>\n                <li><em>If he <strong>had listened</strong> to the teacher's guidance yesterday, he <strong>would know</strong> how to solve this exercise now.</em></li>\n              </ul>\n              <hr/>\n              <p><strong>3. Đảo ngữ Câu điều kiện (Inversion of Conditionals):</strong></p>\n              <ul>\n                <li>Loại 1: <code>Should + S + V(bare), S + will + V</code> (<em>Should you need assistance, please inform me.</em>)</li>\n                <li>Loại 2: <code>Were + S + (to V), S + would + V</code> (<em>Were I in your shoes, I would accept the scholarship.</em>)</li>\n                <li>Loại 3: <code>Had + S + V3/ed, S + would have + V3/ed</code> (<em>Had they prepared earlier, they would have passed.</em>)</li>\n              </ul>\n            </div>\n            <h4>2. Kỹ năng Đọc hiểu: Skimming & Scanning & Xử lý từ vựng trong văn cảnh</h4>\n            <p>Học sinh áp dụng chiến lược Skimming (đọc lướt nắm ý chính topic sentence) và Scanning (tìm quét chi tiết ngày tháng, số liệu, tên riêng) để xử lý đoạn văn từ 300 - 400 từ nhanh và chính xác.</p>\n        ",
+        "vocab": [
+          {
+            "word": "comprehend",
+            "phonetic": "/ˌkɒmprɪˈhend/",
+            "pos": "verb",
+            "meaning": "Hiểu thấu đáo nội dung văn bản",
+            "example": "Skimming the first paragraph helps students comprehend the author's primary stance."
+          },
+          {
+            "word": "inference",
+            "phonetic": "/ˈɪnfərəns/",
+            "pos": "noun",
+            "meaning": "Sự suy luận logic từ dữ kiện có sẵn",
+            "example": "Question 35 requires a deep contextual inference rather than direct text repetition."
+          },
+          {
+            "word": "context",
+            "phonetic": "/ˈkɒntekst/",
+            "pos": "noun",
+            "meaning": "Ngữ cảnh của từ hoặc đoạn văn",
+            "example": "Guessing unfamiliar words from surrounding context is an essential exam skill."
+          },
+          {
+            "word": "synthesize",
+            "phonetic": "/ˈsɪnθəsaɪz/",
+            "pos": "verb",
+            "meaning": "Tổng hợp, đúc kết thông tin đa chiều",
+            "example": "Top candidates synthesize arguments from multiple passages effectively."
+          },
+          {
+            "word": "paramount",
+            "phonetic": "/ˈpærəmaʊnt/",
+            "pos": "adj",
+            "meaning": "Tối quan trọng, có ý nghĩa then chốt",
+            "example": "Time allocation during the 50-minute exam is of paramount importance."
+          }
+        ],
+        "listening": {
+          "title": "Mastering English Reading Comprehension",
+          "context": "Nghe chuyên gia luyện thi chia sẻ kỹ thuật phân bổ thời gian và giải quyết câu hỏi đọc hiểu khó.",
+          "lines": [
+            {
+              "speaker": "Tutor",
+              "text": "Do not get stuck on single unfamiliar words when reading complex academic articles."
+            },
+            {
+              "speaker": "Student",
+              "text": "How much time should we spend on each reading comprehension passage?"
+            },
+            {
+              "speaker": "Tutor",
+              "text": "Allocate no more than ten to twelve minutes per text, and always verify your answers against specific line references."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What is the recommended maximum time allocation for one reading passage?",
+            "options": [
+              "25 to 30 minutes",
+              "10 to 12 minutes",
+              "1 to 2 minutes",
+              "45 minutes"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "Had the candidates _______ the instructions thoroughly, they would not have made that avoidable error.",
+            "options": [
+              "read",
+              "reading",
+              "reads",
+              "have read"
+            ],
+            "correctIndex": 0,
+            "explanation": "Đảo ngữ câu điều kiện loại 3: 'Had + S + V3/ed' ('Had the candidates read...')."
+          },
+          {
+            "question": "If she had received proper medical treatment last month, she _______ healthy today.",
+            "options": [
+              "would be",
+              "would have been",
+              "is",
+              "will be"
+            ],
+            "correctIndex": 0,
+            "explanation": "Câu điều kiện trộn (quá khứ tác động đến hiện tại 'today'): mệnh đề chính dùng 'would + V' ('would be')."
+          },
+          {
+            "question": "Understanding unfamiliar words relies heavily on analyzing the immediate _______ in which they appear.",
+            "options": [
+              "context",
+              "footprint",
+              "chore",
+              "appliance"
+            ],
+            "correctIndex": 0,
+            "explanation": "'Context' có nghĩa là ngữ cảnh ngôn ngữ xung quanh từ vựng."
+          }
+        ]
+      },
+      {
+        "id": "L12-3",
+        "title": "Chuyên đề 3: Câu giả định (Subjunctive Mood) và Câu ước (Wish Clauses)",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Thể Giả định (Subjunctive Mood) với các Động từ & Tính từ Bắt buộc</h4>\n            <div class=\"grammar-box\">\n              <p>Sau các động từ như <em>demand, require, suggest, recommend, insist, propose, order...</em></p>\n              <p>Và các tính từ như <em>essential, vital, crucial, mandatory, imperative, necessary...</em></p>\n              <p>Cấu trúc: <code>S + V / It is adj + THAT + S + (should) + V(nguyên mẫu không 'to')</code></p>\n              <ul>\n                <li><em>The doctor recommended that he <strong>give</strong> up smoking immediately.</em> (không chia 'gives')</li>\n                <li><em>It is crucial that every candidate <strong>be</strong> present at the examination venue on time.</em></li>\n              </ul>\n            </div>\n            <h4>2. Cấu trúc Câu ước (Wish) và If only</h4>\n            <div class=\"grammar-box\">\n              <ul>\n                <li><strong>Ước cho tương lai:</strong> <code>S + wish + S + would/could + V</code> (<em>I wish it would stop raining soon.</em>)</li>\n                <li><strong>Ước trái ngược với hiện tại:</strong> <code>S + wish + S + V2/ed (were)</code> (<em>I wish I were more proficient in speaking English.</em>)</li>\n                <li><strong>Ước trái ngược với quá khứ (hối tiếc):</strong> <code>S + wish + S + had + V3/ed</code> (<em>She wishes she had checked her essay before submitting.</em>)</li>\n              </ul>\n            </div>\n        ",
+        "vocab": [
+          {
+            "word": "imperative",
+            "phonetic": "/ɪmˈperətɪv/",
+            "pos": "adj",
+            "meaning": "Tối khẩn thiết, bắt buộc phải thi hành",
+            "example": "It is imperative that safety protocols be adhered to strictly."
+          },
+          {
+            "word": "mandatory",
+            "phonetic": "/ˈmændətəri/",
+            "pos": "adj",
+            "meaning": "Mang tính bắt buộc theo quy định",
+            "example": "Wearing student identity badges is mandatory during state examinations."
+          },
+          {
+            "word": "propose",
+            "phonetic": "/prəˈpəʊz/",
+            "pos": "verb",
+            "meaning": "Đề xuất, kiến nghị",
+            "example": "The committee proposed that extra tutorials be offered to struggling learners."
+          },
+          {
+            "word": "regret",
+            "phonetic": "/rɪˈɡret/",
+            "pos": "noun/verb",
+            "meaning": "Lòng hối tiếc / Hối tiếc về điều đã qua",
+            "example": "He expressed deep regret for not revising the historical timeline."
+          },
+          {
+            "word": "proficient",
+            "phonetic": "/prəˈfɪʃnt/",
+            "pos": "adj",
+            "meaning": "Thành thạo, điêu luyện chuyên sâu",
+            "example": "Graduates need to be proficient in both spoken and written English."
+          }
+        ],
+        "listening": {
+          "title": "Academic Counseling: Overcoming Exam Regrets",
+          "context": "Nghe giáo viên tư vấn tâm lý hướng dẫn học sinh giải tỏa áp lực thi cử và biến hối tiếc thành động lực.",
+          "lines": [
+            {
+              "speaker": "Counselor",
+              "text": "Many students tell me: 'I wish I had studied harder during the first semester.'"
+            },
+            {
+              "speaker": "Student",
+              "text": "How can we stop worrying about past mistakes and focus on upcoming exams?"
+            },
+            {
+              "speaker": "Counselor",
+              "text": "It is essential that each student design a realistic daily timetable and execute it diligently from today."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What practical advice does the counselor offer to overcome past study regrets?",
+            "options": [
+              "Worrying continuously about previous scores",
+              "Designing and diligently following a realistic daily timetable",
+              "Skipping all upcoming examinations",
+              "Abandoning academic goals completely"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "The principal demanded that all students _______ present at the national anthem ceremony by 7:00 AM.",
+            "options": [
+              "are",
+              "be",
+              "were",
+              "to be"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc giả định thức: 'demand that + S + (should) + V-nguyên mẫu' ('be')."
+          },
+          {
+            "question": "I wish I _______ more time to double-check my answers during yesterday's simulated exam.",
+            "options": [
+              "have",
+              "had had",
+              "would have",
+              "had"
+            ],
+            "correctIndex": 1,
+            "explanation": "Câu ước cho sự việc trong quá khứ ('yesterday') dùng Quá khứ hoàn thành: 'had had'."
+          },
+          {
+            "question": "It is vital that environmental conservation _______ prioritized in regional development plans.",
+            "options": [
+              "is",
+              "be",
+              "was",
+              "are"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc giả định thức sau tính từ 'vital that + S + (should) + be'."
+          }
+        ]
+      },
+      {
+        "id": "L12-4",
+        "title": "Chuyên đề 4: Câu hỏi đuôi (Tag Questions) và Cấu trúc Đảo ngữ (Inversion)",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Quy tắc Câu hỏi đuôi (Tag Questions) Nâng cao</h4>\n            <div class=\"grammar-box\">\n              <ul>\n                <li>Mệnh đề khẳng định &rarr; đuôi phủ định; Mệnh đề phủ định &rarr; đuôi khẳng định.</li>\n                <li><strong>Trường hợp đặc biệt:</strong>\n                  <ul>\n                    <li><em>I am ... &rarr; aren't I?</em></li>\n                    <li><em>Let's ... &rarr; shall we?</em></li>\n                    <li><em>Câu mệnh lệnh &rarr; will you? / won't you?</em></li>\n                    <li>Chủ ngữ <em>Everyone, everybody, nobody, someone &rarr; they</em> (<em>Nobody phoned, <strong>did they</strong>?</em>)</li>\n                    <li>Chủ ngữ <em>Nothing, everything &rarr; it</em> (<em>Nothing is impossible, <strong>is it</strong>?</em>)</li>\n                    <li>Có các từ phủ định/bán phủ định như <em>never, seldom, hardly, rarely, scarcely, little &rarr; đuôi khẳng định</em> (<em>She seldom complains, <strong>does she</strong>?</em>).</li>\n                  </ul>\n                </li>\n              </ul>\n            </div>\n            <h4>2. Cấu trúc Đảo ngữ Nhấn mạnh (Inversion for Emphasis)</h4>\n            <div class=\"grammar-box\">\n              <p>Đưa trạng từ phủ định hoặc bán phủ định lên đầu câu &rarr; Đảo trợ động từ lên trước chủ ngữ:</p>\n              <ul>\n                <li><code>Never / Rarely / Seldom + trợ động từ + S + V</code><br/>\n                <em>Ví dụ: <strong>Rarely have I seen</strong> such an outstanding presentation.</em></li>\n                <li><code>No sooner + had + S + V3 + THAN + S + V2/ed</code><br/>\n                <em>Ví dụ: <strong>No sooner had he submitted</strong> the test <strong>than</strong> the bell rang.</em></li>\n                <li><code>Not only + trợ động từ + S + V + BUT ALSO ...</code><br/>\n                <em>Ví dụ: <strong>Not only did she pass</strong> the exam, <strong>but she also</strong> achieved the highest score.</em></li>\n                <li><code>Only when / Only after + S + V, + trợ động từ + S + V</code></li>\n              </ul>\n            </div>\n        ",
+        "vocab": [
+          {
+            "word": "scarcely",
+            "phonetic": "/ˈskeəsli/",
+            "pos": "adv",
+            "meaning": "Hầu như không, vừa mới thì",
+            "example": "Scarcely had the teacher finished the problem when five hands went up."
+          },
+          {
+            "word": "emphasis",
+            "phonetic": "/ˈemfəsɪs/",
+            "pos": "noun",
+            "meaning": "Sự nhấn mạnh đặc biệt",
+            "example": "Inverted word order is employed by authors for dramatic stylistic emphasis."
+          },
+          {
+            "word": "prestigious",
+            "phonetic": "/preˈstɪdʒəs/",
+            "pos": "adj",
+            "meaning": "Danh giá, có uy tín cao",
+            "example": "Winning admission to a prestigious university requires steady dedication."
+          },
+          {
+            "word": "exceptional",
+            "phonetic": "/ɪkˈsepʃənl/",
+            "pos": "adj",
+            "meaning": "Xuất sắc, phi thường khác biệt",
+            "example": "Her exceptional command of English grammar impressed the entire panel."
+          },
+          {
+            "word": "diligent",
+            "phonetic": "/ˈdɪlɪdʒənt/",
+            "pos": "adj",
+            "meaning": "Chăm chỉ, cần mẫn siêng năng",
+            "example": "Diligent practice ensures consistent improvement across mock tests."
+          }
+        ],
+        "listening": {
+          "title": "Grammar Masterclass: Inversion and Stylistic Nuance",
+          "context": "Nghe giảng viên đại học hướng dẫn cách nâng cao thang điểm viết và đọc hiểu bằng cấu trúc đảo ngữ.",
+          "lines": [
+            {
+              "speaker": "Professor",
+              "text": "Notice how academic journals use inversion to add elegance and persuasive weight to key arguments."
+            },
+            {
+              "speaker": "Student",
+              "text": "Could you provide an example with 'Not only'?"
+            },
+            {
+              "speaker": "Professor",
+              "text": "Certainly: Not only does renewable energy curb carbon pollution, but it also generates thousands of green careers."
+            }
+          ],
+          "checkQuestion": {
+            "question": "Why do academic writers employ grammatical inversion?",
+            "options": [
+              "To confuse and deceive readers",
+              "To add elegance, emphasis, and persuasive weight to arguments",
+              "To avoid using proper punctuation",
+              "To shorten texts arbitrarily"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "No sooner _______ the classroom than the fire alarm sounded throughout the corridor.",
+            "options": [
+              "we had entered",
+              "had we entered",
+              "did we enter",
+              "we entered"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc đảo ngữ: 'No sooner had + S + V3/ed + than...' ('had we entered')."
+          },
+          {
+            "question": "Nobody in our English study group had difficulty with the listening section, _______?",
+            "options": [
+              "did they",
+              "didn't they",
+              "had they",
+              "didn't we"
+            ],
+            "correctIndex": 0,
+            "explanation": "Chủ ngữ 'Nobody' mang nghĩa phủ định, câu hỏi đuôi phải ở dạng khẳng định và quy đổi đại từ thành 'they': 'did they?'."
+          },
+          {
+            "question": "Rarely _______ such remarkable dedication shown by high school examinees.",
+            "options": [
+              "we have seen",
+              "have we seen",
+              "we saw",
+              "did we see"
+            ],
+            "correctIndex": 1,
+            "explanation": "Đảo ngữ với trạng từ bán phủ định 'Rarely': trợ động từ 'have' đảo lên trước chủ ngữ 'we' ('have we seen')."
+          }
+        ]
+      },
+      {
+        "id": "L12-5",
+        "title": "Chuyên đề 5: Câu chẻ nhấn mạnh (Cleft Sentences) và Động từ ghép nâng cao",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Câu chẻ nhấn mạnh (Cleft Sentences với It is / It was ... that / who)</h4>\n            <div class=\"grammar-box\">\n              <p>Câu chẻ dùng để nhấn mạnh một thành phần cụ thể trong câu (chủ ngữ, tân ngữ, hoặc trạng ngữ):</p>\n              <ul>\n                <li><strong>Nhấn mạnh Chủ ngữ:</strong><br/>\n                <em>It was <strong>Thầy Nguyễn Hải Nam</strong> who founded the school's English Honor Club in 2020.</em></li>\n                <li><strong>Nhấn mạnh Tân ngữ:</strong><br/>\n                <em>It was <strong>the national grammar scholarship</strong> that she received last term.</em></li>\n                <li><strong>Nhấn mạnh Trạng ngữ thời gian / nơi chốn:</strong><br/>\n                <em>It was <strong>in the school multimedia room</strong> that we conducted our first debate contest.</em></li>\n              </ul>\n            </div>\n            <h4>2. Collocations & Thành ngữ (Idioms) chuẩn cấu trúc Đề thi Tốt nghiệp THPT</h4>\n            <ul>\n              <li><strong>hit the books:</strong> tập trung học bài nghiêm túc, cày bài thi</li>\n              <li><strong>burn the midnight oil:</strong> thức khuya học bài, làm việc miệt mài</li>\n              <li><strong>pass with flying colours:</strong> thi đỗ với điểm số rực rỡ, xuất sắc</li>\n              <li><strong>put into practice:</strong> đưa lý thuyết vào ứng dụng thực tiễn</li>\n              <li><strong>make headway:</strong> đạt được bước tiến rõ rệt</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "burn the midnight oil",
+            "phonetic": "/bɜːn ðə ˈmɪdnaɪt ɔɪl/",
+            "pos": "idiom",
+            "meaning": "Thức khuya miệt mài học bài hoặc làm việc",
+            "example": "Many seniors burn the midnight oil before the national high school examination."
+          },
+          {
+            "word": "pass with flying colours",
+            "phonetic": "/pɑːs wɪð ˈflaɪɪŋ ˈkʌləz/",
+            "pos": "idiom",
+            "meaning": "Thi đỗ với thành tích vô cùng xuất sắc",
+            "example": "With steady perseverance, she passed the university entrance test with flying colours."
+          },
+          {
+            "word": "cleft sentence",
+            "phonetic": "/kleft ˈsentəns/",
+            "pos": "noun",
+            "meaning": "Câu chẻ (cấu trúc ngữ pháp nhấn mạnh)",
+            "example": "A cleft sentence directs the reader's attention to the most crucial piece of information."
+          },
+          {
+            "word": "innovative",
+            "phonetic": "/ˈɪnəveɪtɪv/",
+            "pos": "adj",
+            "meaning": "Đột phá, sáng tạo đổi mới",
+            "example": "The pedagogical approach incorporates innovative digital learning tools."
+          },
+          {
+            "word": "comprehension",
+            "phonetic": "/ˌkɒmprɪˈhenʃn/",
+            "pos": "noun",
+            "meaning": "Khả năng lĩnh hội, sự hiểu biết thấu đáo",
+            "example": "Daily reading expands vocabulary and strengthens reading comprehension."
+          }
+        ],
+        "listening": {
+          "title": "Exam Hall Psychology: Keeping Calm and Confident",
+          "context": "Nghe chia sẻ kinh nghiệm làm bài thi của thủ khoa khối D1 năm học trước.",
+          "lines": [
+            {
+              "speaker": "Valedictorian",
+              "text": "It was during the final sixty minutes of the mock examination that I learned to manage panic."
+            },
+            {
+              "speaker": "Junior",
+              "text": "Did you study all night before the official testing day?"
+            },
+            {
+              "speaker": "Valedictorian",
+              "text": "Never burn the midnight oil the night immediately before an exam! A rested mind recalls vocabulary twice as fast."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What is the valedictorian's advice regarding the night before the official test?",
+            "options": [
+              "Stay awake all night to review notes",
+              "Never burn the midnight oil; ensure proper sleep for optimal memory recall",
+              "Skip all meals and sleep eighteen hours",
+              "Ignore all grammatical guidelines"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "It was in the school library _______ we spent hours preparing for the provincial competition.",
+            "options": [
+              "that",
+              "which",
+              "where",
+              "whom"
+            ],
+            "correctIndex": 0,
+            "explanation": "Trong cấu trúc câu chẻ nhấn mạnh trạng ngữ 'It was [trạng ngữ] that...': dùng 'that'."
+          },
+          {
+            "question": "Thanks to her relentless preparation, she passed the entrance examination with flying _______.",
+            "options": [
+              "colours",
+              "flags",
+              "wings",
+              "stars"
+            ],
+            "correctIndex": 0,
+            "explanation": "Thành ngữ 'pass with flying colours' có nghĩa là thi đỗ với kết quả vô cùng rực rỡ."
+          },
+          {
+            "question": "It _______ her mother who encouraged her to apply for the overseas academic scholarship.",
+            "options": [
+              "was",
+              "is",
+              "were",
+              "has been"
+            ],
+            "correctIndex": 0,
+            "explanation": "Sự việc trong quá khứ diễn đạt trong câu chẻ dùng 'It was...'."
+          }
+        ]
+      },
+      {
+        "id": "L12-6",
+        "title": "Chuyên đề 6: Đề Thi Mô Phỏng Tốt Nghiệp THPT - Tổng Ôn Ngữ Pháp & Từ Vựng",
+        "duration": "45 phút",
+        "theoryHtml": "\n            <h4>1. Phân Tích Cấu Trúc Đề Thi Tốt Nghiệp THPT Môn Tiếng Anh</h4>\n            <div class=\"grammar-box\">\n              <p>Đề thi gồm các nhóm dạng câu hỏi chuẩn hóa:</p>\n              <ul>\n                <li><strong>Phát âm & Trọng âm:</strong> Quy tắc đuôi -ed, -s/es, nguyên âm đôi, trọng âm từ 2 và 3 âm tiết.</li>\n                <li><strong>Ngữ pháp & Từ vựng:</strong> Mạo từ (a/an/the/zero article), Câu hỏi đuôi, Giới từ, Thì động từ, Bị động, Rút gọn mệnh đề, Cụm từ cố định (Collocations).</li>\n                <li><strong>Giao tiếp xã hội:</strong> Các tình huống đáp lời khen ngợi, cảm ơn, đồng tình hoặc từ chối lịch sự.</li>\n                <li><strong>Từ đồng nghĩa & Từ trái nghĩa:</strong> Phân tích từ trong văn cảnh cụ thể.</li>\n                <li><strong>Tìm lỗi sai:</strong> Đại từ quy chiếu, hòa hợp chủ ngữ - vị ngữ, từ dễ gây nhầm lẫn (confusing words).</li>\n                <li><strong>Viết lại câu & Kết hợp câu:</strong> Câu điều kiện, câu gián tiếp, đảo ngữ, động từ khuyết thiếu quá khứ (<em>must have V3, should have V3</em>).</li>\n              </ul>\n            </div>\n            <h4>2. Chiến Thuật Làm Bài Đạt Điểm 9+</h4>\n            <ul>\n              <li>Giải quyết nhanh 20 câu nhận biết - thông hiểu trong 15 phút đầu.</li>\n              <li>Dành 25 phút đọc kỹ 2 bài đọc hiểu, gạch chân từ khóa và dẫn chứng dòng.</li>\n              <li>10 phút cuối rà soát toàn bộ phiếu trả lời, kiểm tra các câu đánh bẫy đại từ quy chiếu và đảo ngữ.</li>\n            </ul>\n        ",
+        "vocab": [
+          {
+            "word": "standardized",
+            "phonetic": "/ˈstændədaɪzd/",
+            "pos": "adj",
+            "meaning": "Chuẩn hóa theo tiêu chuẩn quốc gia/quốc tế",
+            "example": "The national graduation test is a standardized academic assessment."
+          },
+          {
+            "word": "confusing words",
+            "phonetic": "/kənˈfjuːzɪŋ wɜːdz/",
+            "pos": "noun",
+            "meaning": "Các từ dễ nhầm lẫn (economic vs economical)",
+            "example": "Mastering confusing words helps students eliminate silly mistakes in error identification."
+          },
+          {
+            "word": "collocation",
+            "phonetic": "/ˌkɒləˈkeɪʃn/",
+            "pos": "noun",
+            "meaning": "Cụm từ kết hợp tự nhiên trong tiếng Anh",
+            "example": "'Make a decision' is a natural English collocation, whereas 'do a decision' is incorrect."
+          },
+          {
+            "word": "reference",
+            "phonetic": "/ˈrefrəns/",
+            "pos": "noun",
+            "meaning": "Sự quy chiếu, dẫn chứng trong văn bản",
+            "example": "Pronoun reference questions test your ability to link ideas across sentences."
+          },
+          {
+            "word": "valedictorian",
+            "phonetic": "/ˌvælɪdɪkˈtɔːriən/",
+            "pos": "noun",
+            "meaning": "Thủ khoa tốt nghiệp",
+            "example": "The valedictorian delivered an inspiring speech at the high school commencement ceremony."
+          }
+        ],
+        "listening": {
+          "title": "National Exam Simulation: Final Instructions",
+          "context": "Nghe Thầy Nguyễn Hải Nam phổ biến chiến lược phân bố sức lực và tâm lý trước giờ thi chính thức.",
+          "lines": [
+            {
+              "speaker": "Thầy Nam",
+              "text": "Welcome high school seniors to our final simulation briefing."
+            },
+            {
+              "speaker": "Student",
+              "text": "Teacher, how should we tackle difficult vocabulary questions that we have never encountered?"
+            },
+            {
+              "speaker": "Thầy Nam",
+              "text": "Analyze the prefix, suffix, and contextual clues. Eliminate definitively incorrect choices before making your final selection."
+            }
+          ],
+          "checkQuestion": {
+            "question": "What is teacher Nam's advice when encountering unfamiliar vocabulary in the examination?",
+            "options": [
+              "Leave the question completely blank",
+              "Analyze prefixes, suffixes, and contextual clues, then eliminate wrong options",
+              "Ask the invigilator for translation",
+              "Spend thirty minutes on a single word"
+            ],
+            "correctIndex": 1
+          }
+        },
+        "quiz": [
+          {
+            "question": "She _______ have forgotten about the test, because she was studying in the library all morning.",
+            "options": [
+              "mustn't",
+              "can't",
+              "needn't",
+              "shouldn't"
+            ],
+            "correctIndex": 1,
+            "explanation": "'Can't have + V3/ed' diễn tả sự phỏng đoán chắc chắn về một điều không thể xảy ra trong quá khứ."
+          },
+          {
+            "question": "It is essential that every examinee _______ strictly by the regulations published by the Department of Education.",
+            "options": [
+              "abides",
+              "abide",
+              "abided",
+              "abiding"
+            ],
+            "correctIndex": 1,
+            "explanation": "Cấu trúc giả định thức sau 'It is essential that S + (should) + V-nguyên thể' ('abide')."
+          },
+          {
+            "question": "Not only _______ the provincial scholarship, but he also achieved the highest graduation score in the district.",
+            "options": [
+              "did he win",
+              "he won",
+              "has he won",
+              "was he winning"
+            ],
+            "correctIndex": 0,
+            "explanation": "Đảo ngữ với 'Not only + trợ động từ + S + V' trong quá khứ đơn: 'did he win'."
+          }
+        ]
+      }
+    ],
+    "finalExam": [
+      {
+        "question": "1. While the lecturer _______ the lesson, students were taking comprehensive notes.",
+        "options": [
+          "explained",
+          "was explaining",
+          "has explained",
+          "explains"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "2. Outstanding educators _______ their entire careers to enhancing the learning standards of the school.",
+        "options": [
+          "dedicated",
+          "inspired",
+          "achieved",
+          "admired"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "3. If candidates _______ their time appropriately, they will finish the examination on schedule.",
+        "options": [
+          "managed",
+          "manage",
+          "had managed",
+          "would manage"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "4. The student _______ achieved the highest score in the English contest received a merit scholarship.",
+        "options": [
+          "whom",
+          "which",
+          "who",
+          "whose"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "question": "5. High academic attainment is achieved through consistent diligence and steadfast _______.",
+        "options": [
+          "perseverance",
+          "appliance",
+          "footprint",
+          "hesitation"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "6. Had she revised the conditional inversion structures, she _______ full marks on that difficult section.",
+        "options": [
+          "would receive",
+          "would have received",
+          "received",
+          "will receive"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "7. If he had followed the study schedule laid out by his teacher last month, he _______ confident today.",
+        "options": [
+          "would feel",
+          "would have felt",
+          "felt",
+          "feels"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "8. It is imperative that all electronic devices _______ stored outside the examination hall.",
+        "options": [
+          "are",
+          "be",
+          "were",
+          "to be"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "9. She wishes she _______ more attention to the lecturer's warning regarding pronoun reference traps.",
+        "options": [
+          "paid",
+          "had paid",
+          "pays",
+          "would pay"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "10. No sooner _______ into the examination room than the official countdown timer began.",
+        "options": [
+          "we had stepped",
+          "had we stepped",
+          "did we step",
+          "we stepped"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "11. Rarely _______ such an inspiring display of academic integrity among graduating seniors.",
+        "options": [
+          "have we witnessed",
+          "we have witnessed",
+          "did we witnessed",
+          "we witnessed"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "12. Nobody in the lecture hall objected to extending the research deadline, _______?",
+        "options": [
+          "did they",
+          "didn't they",
+          "had they",
+          "didn't we"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "13. It was in the provincial library _______ the study group gathered every Saturday afternoon.",
+        "options": [
+          "where",
+          "that",
+          "which",
+          "when"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "14. Through extraordinary dedication, the student passed the university entrance examination with flying _______.",
+        "options": [
+          "colours",
+          "flags",
+          "banners",
+          "stars"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "15. All candidates _______ carefully review their optical mark recognition sheets before handing them in.",
+        "options": [
+          "should",
+          "mustn't",
+          "dare",
+          "ought"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "16. The scientific discovery represents a monumental _______ in renewable solar technology.",
+        "options": [
+          "breakthrough",
+          "footprint",
+          "chore",
+          "curfew"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "17. The candidate was the first person _______ the complex reading comprehension passage.",
+        "options": [
+          "decoding",
+          "to decode",
+          "decoded",
+          "decode"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "18. He can't _______ all fifty questions in twenty minutes without making careless mistakes.",
+        "options": [
+          "have completed",
+          "completed",
+          "complete",
+          "completing"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "question": "19. The university dean proposed that an honors English seminar _______ established next semester.",
+        "options": [
+          "is",
+          "be",
+          "was",
+          "has been"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "question": "20. Not only _______ the valedictorian speech, but she also earned a full academic scholarship.",
+        "options": [
+          "did she deliver",
+          "she delivered",
+          "has she delivered",
+          "she had delivered"
+        ],
+        "correctIndex": 0
+      }
+    ]
+  }
+]

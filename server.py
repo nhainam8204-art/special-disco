@@ -65,6 +65,12 @@ class SchoolLMSHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
+        # Chan tai truc tiep cac tep tin co so du lieu va ma nguon may chu
+        lower_path = parsed.path.lower()
+        if lower_path.endswith((".db", ".py", ".bat", ".toml", ".sqlite", ".jsonl")):
+            self.send_error(403, "Access to database and server files is forbidden")
+            return
+
         if parsed.path == "/api/state":
             state = get_saved_state()
             self.send_response(200)
